@@ -40,8 +40,7 @@
       text-align: center;
       font-weight: bold;
     }
-    .sidebar a:hover,
-    .sidebar a.active {
+    .sidebar a:hover {
       color: var(--highlight-bg);
     }
     .nav-cn {
@@ -79,9 +78,7 @@
       font-weight: bold;
     }
     .horizontal-nav a:hover,
-    .horizontal-nav a.active {
-      color: var(--highlight-bg);
-    }
+    
     .horizontal-nav a.active {
       color: var(--highlight-bg);
     }
@@ -242,9 +239,9 @@
 
     <section id="projects">
       <h2 onclick="toggleAccordion(this)">作品 / Projects</h2>
-      <div class="accordion-content" style="text-align: center;">
+      <div class="accordion-content section-inner" style="text-align: center;">
         <div class="item-block">
-          <img src="https://source.unsplash.com/random/800x600?architecture" alt="Project">
+          <img loading="lazy" src="https://source.unsplash.com/random/800x600?architecture" alt="Project">
           <p>这是一个关于城市空间的作品示例，结合在地性与材料表达。</p>
         </div>
       </div>
@@ -306,31 +303,25 @@
     </section>
   </div>
   <script>
+  let navInitialized = false;
   function toggleMobileNav() {
     const nav = document.getElementById('horizontalNav');
     nav.classList.toggle('show');
-    const navLinks = nav.querySelectorAll('a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('show');
+    if (!navInitialized) {
+      const navLinks = nav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('show');
+        });
       });
-    });
+      navInitialized = true;
+    }
   }
-    function toggleAccordion(header) {
+  function toggleAccordion(header) {
       const content = header.nextElementSibling;
       content.classList.toggle('open');
     }
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.sidebar a, .horizontal-nav a');
-    window.addEventListener('scroll', () => {
-      let current = "";
-      sections.forEach(section => {
-        const top = window.scrollY;
-        const offset = section.offsetTop - 200;
-        if (top >= offset) {
-          current = section.getAttribute("id");
-        }
-      });
+    
       navLinks.forEach(link => {
         link.classList.remove("active");
         if (link.getAttribute("href") === `#${current}`) {
