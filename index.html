@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -27,17 +26,6 @@
       text-transform: uppercase;
       margin-bottom: 40px;
     }
-    .gallery {
-      display: flex;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-    }
-    .gallery img {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      scroll-snap-align: start;
-    }
     section {
       max-width: 900px;
       margin: 80px auto;
@@ -55,6 +43,43 @@
       margin: 100px 0 40px;
       color: #999;
     }
+    .project {
+      margin-bottom: 60px;
+    }
+    .project-gallery-wrapper {
+      position: relative;
+    }
+    .project-gallery {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 10px;
+      scroll-behavior: smooth;
+    }
+    .project-gallery img {
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      scroll-snap-align: start;
+    }
+    .scroll-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      font-size: 24px;
+      padding: 8px;
+      cursor: pointer;
+      z-index: 1;
+    }
+    .scroll-button.left {
+      left: 10px;
+    }
+    .scroll-button.right {
+      right: 10px;
+    }
   </style>
 </head>
 <body>
@@ -65,12 +90,6 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <div class="gallery">
-    <img src="https://source.unsplash.com/random/1200x800?architecture" alt="Project Image 1">
-    <img src="https://source.unsplash.com/random/1201x800?design" alt="Project Image 2">
-    <img src="https://source.unsplash.com/random/1202x800?space" alt="Project Image 3">
-  </div>
-
   <section id="about">
     <h2>About 空间指南</h2>
     <p>空间指南是一家关注本土文化、在地性、环境语境与社会参与的独立设计事务所，强调空间、创意与记忆之间的深度对话。</p>
@@ -78,7 +97,44 @@
 
   <section id="projects">
     <h2>Projects</h2>
-    <p>我们致力于公共空间观察、研究、创意、设计服务，公共艺术、建筑设计等领域的原创性实践。</p>
+
+    <div class="project">
+      <h3>1</h3>
+      <div class="project-gallery-wrapper">
+        <button class="scroll-button left" onclick="this.nextElementSibling.scrollBy({left: -300, behavior: 'smooth'})">◂</button>
+        <div class="project-gallery">
+          <img src="https://images.unsplash.com/photo-1600585152915-0c79c9d1786d" alt="1-1">
+          <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809" alt="1-2">
+          <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6" alt="1-3">
+        </div>
+        <button class="scroll-button right" onclick="this.previousElementSibling.scrollBy({left: 300, behavior: 'smooth'})">▸</button>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>2</h3>
+      <div class="project-gallery-wrapper">
+        <button class="scroll-button left" onclick="this.nextElementSibling.scrollBy({left: -300, behavior: 'smooth'})">◂</button>
+        <div class="project-gallery">
+          <img src="https://images.unsplash.com/photo-1618221669332-b16c0c91f1b4" alt="2-1">
+          <img src="https://images.unsplash.com/photo-1602526432604-a54f8d7d3086" alt="2-2">
+        </div>
+        <button class="scroll-button right" onclick="this.previousElementSibling.scrollBy({left: 300, behavior: 'smooth'})">▸</button>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>3</h3>
+      <div class="project-gallery-wrapper">
+        <button class="scroll-button left" onclick="this.nextElementSibling.scrollBy({left: -300, behavior: 'smooth'})">◂</button>
+        <div class="project-gallery">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2" alt="3-1">
+          <img src="https://images.unsplash.com/photo-1600585153837-1be3c6c8df26" alt="3-2">
+        </div>
+        <button class="scroll-button right" onclick="this.previousElementSibling.scrollBy({left: 300, behavior: 'smooth'})">▸</button>
+      </div>
+    </div>
+
   </section>
 
   <section id="contact">
