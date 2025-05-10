@@ -22,7 +22,7 @@
       top: 0;
       left: 0;
       height: 100vh;
-      background: #fff;
+      background: #000;
       border-right: 1px solid #eee;
       display: flex;
       flex-direction: column;
@@ -34,11 +34,17 @@
     }
     .sidebar a {
       text-decoration: none;
-      color: #111;
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 4px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .sidebar a:hover {
+      background: var(--highlight-bg);
+      color: var(--highlight-text);
+      border-radius: 4px;
     }
     .sidebar a.active {
       background: var(--highlight-bg);
@@ -122,12 +128,12 @@
 </head>
 <body>
   <div class="sidebar" id="sidebarNav">
-    <a href="#projects"><span class="nav-cn">作品</span><span class="nav-en">Projects</span></a>
-    <a href="#exhibitions"><span class="nav-cn">展览</span><span class="nav-en">Exhibitions</span></a>
-    <a href="#publications"><span class="nav-cn">出版</span><span class="nav-en">Publications</span></a>
-    <a href="#collaboration"><span class="nav-cn">合作</span><span class="nav-en">Collaboration</span></a>
-    <a href="#about"><span class="nav-cn">关于</span><span class="nav-en">About</span></a>
-    <a href="#contact"><span class="nav-cn">联系</span><span class="nav-en">Contact</span></a>
+    <a href="#projects"><span class="nav-cn">作品</span> <span class="nav-en">Projects</span></a>
+    <a href="#exhibitions"><span class="nav-cn">展览</span> <span class="nav-en">Exhibitions</span></a>
+    <a href="#publications"><span class="nav-cn">出版</span> <span class="nav-en">Publications</span></a>
+    <a href="#collaboration"><span class="nav-cn">合作</span> <span class="nav-en">Collaboration</span></a>
+    <a href="#about"><span class="nav-cn">关于</span> <span class="nav-en">About</span></a>
+    <a href="#contact"><span class="nav-cn">联系</span> <span class="nav-en">Contact</span></a>
   </div>
   <div class="main-content">
     <header>Space-Guide / 空间指南</header>
@@ -139,7 +145,6 @@
       <a href="#about">关于 / About</a>
       <a href="#contact">联系 / Contact</a>
     </nav>
-    <!-- 内容区块将在这里展开 -->
   </div>
   <script>
     function toggleAccordion(header) {
