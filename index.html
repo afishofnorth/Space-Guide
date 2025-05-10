@@ -108,11 +108,72 @@
       font-size: 14px;
     }
     @media (max-width: 768px) {
+    .horizontal-nav {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .horizontal-nav.show {
+      max-height: 500px;
+    }
       .sidebar {
         display: none;
       }
     }
   </style>
+<style>
+  .menu-toggle {
+    display: none;
+    font-size: 22px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    header {
+      font-size: 18px;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+    .horizontal-nav {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      flex-direction: column;
+      align-items: center;
+      background: white;
+      position: absolute;
+      width: 100%;
+      top: 60px;
+      left: 0;
+      z-index: 999;
+      padding-bottom: 20px;
+    }
+    .horizontal-nav.show {
+      max-height: 500px;
+    }
+    .menu-toggle {
+      display: inline-block;
+    }
+    .horizontal-nav {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background: white;
+      position: absolute;
+      width: 100%;
+      top: 60px;
+      left: 0;
+      z-index: 999;
+      padding-bottom: 20px;
+    }
+    .horizontal-nav.show {
+      display: flex;
+    }
+    .menu-toggle {
+      display: inline-block;
+    }
+  }
+</style>
 </head>
 <body>
   <div class="sidebar" id="sidebarNav">
@@ -124,7 +185,7 @@
     <a href="#contact"><span class="nav-cn">联系</span> <span class="nav-en">Contact</span></a>
   </div>
   <div class="main-content">
-    <header>Space-Guide / 空间指南</header>
+    <header onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" style="position: sticky; top: 0; background: white; z-index: 1000; cursor: pointer;"><span class="menu-toggle" onclick="toggleMobileNav()">☰</span> Space-Guide / 空间指南</header>
     <nav class="horizontal-nav" id="horizontalNav">
       <a href="#projects">作品 / Projects</a>
       <a href="#exhibitions">展览&amp;活动 / Exhibitions &amp; Events</a>
@@ -195,6 +256,16 @@
     </section>
   </div>
   <script>
+  function toggleMobileNav() {
+    const nav = document.getElementById('horizontalNav');
+    nav.classList.toggle('show');
+    const navLinks = nav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('show');
+      });
+    });
+  }
     function toggleAccordion(header) {
       const content = header.nextElementSibling;
       content.classList.toggle('open');
