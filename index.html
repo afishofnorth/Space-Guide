@@ -1,151 +1,119 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>空间指南 / Space-Guide</title>
-  <style>
-    :root {
-      --highlight-bg: #fff44f;
-      --highlight-text: #111;
-    }
-    body {
-      margin: 0;
-      font-family: Helvetica, sans-serif;
-      background-color: #fff;
-      color: #111;
-      display: flex;
-    }
-    .sidebar {
-      width: 120px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      background: #fff;
-      border-right: 1px solid #eee;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      font-size: 14px;
-      z-index: 999;
-    }
-    .sidebar a {
-      text-decoration: none;
-      color: #111;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 4px;
-    }
-    .sidebar a.active {
-      background: var(--highlight-bg);
-      color: var(--highlight-text);
-      border-radius: 4px;
-    }
-    .nav-cn {
-      writing-mode: vertical-lr;
-      text-orientation: upright;
-    }
-    .nav-en {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      font-size: 12px;
-    }
-    .main-content {
-      margin-left: 120px;
-      flex: 1;
-    }
-    header {
-      padding: 40px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-    .horizontal-nav {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-bottom: 40px;
-      font-size: 14px;
-    }
-    .horizontal-nav a {
-      text-decoration: none;
-      color: #111;
-      padding: 6px 10px;
-    }
-    .horizontal-nav a.active {
-      background: var(--highlight-bg);
-      color: var(--highlight-text);
-      border-radius: 4px;
-    }
-    @media (max-width: 768px) {
-      .sidebar {
-        display: none;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="sidebar" id="sidebarNav">
-    <a href="#projects">
-      <span class="nav-cn">作品</span>
-      <span class="nav-en">Projects</span>
-    </a>
-    <a href="#exhibitions">
-      <span class="nav-cn">展览</span>
-      <span class="nav-en">Exhibitions</span>
-    </a>
-    <a href="#publications">
-      <span class="nav-cn">出版</span>
-      <span class="nav-en">Publications</span>
-    </a>
-    <a href="#collaboration">
-      <span class="nav-cn">合作</span>
-      <span class="nav-en">Collaboration</span>
-    </a>
-    <a href="#about">
-      <span class="nav-cn">关于</span>
-      <span class="nav-en">About</span>
-    </a>
-    <a href="#contact">
-      <span class="nav-cn">联系</span>
-      <span class="nav-en">Contact</span>
-    </a>
+<section id="projects">
+  <h2 onclick="toggleAccordion(this)">作品 / Projects</h2>
+  <div class="accordion-content">
+    <div class="video-wrapper">
+      <div class="video-cover">作品视频一 / Project Video 1</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x400?architecture" alt="项目图示" style="width:100%; margin-top:10px;">
+      <p>这是作品项目一的示例文字说明。</p>
+    </div>
+    <div class="video-wrapper">
+      <div class="video-cover">作品视频二 / Project Video 2</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x401?design" alt="项目图示" style="width:100%; margin-top:10px;">
+      <p>这是作品项目二的示例文字说明。</p>
+    </div>
+    <div class="video-wrapper">
+      <div class="video-cover">作品视频三 / Project Video 3</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x402?space" alt="项目图示" style="width:100%; margin-top:10px;">
+      <p>这是作品项目三的示例文字说明。</p>
+    </div>
   </div>
-  <div class="main-content">
-    <header>Space-Guide / 空间指南</header>
-    <nav class="horizontal-nav" id="horizontalNav">
-      <a href="#projects">作品 / Projects</a>
-      <a href="#exhibitions">展览 / Exhibitions</a>
-      <a href="#publications">出版 / Publications</a>
-      <a href="#collaboration">合作 / Collaboration</a>
-      <a href="#about">关于 / About</a>
-      <a href="#contact">联系 / Contact</a>
-    </nav>
+</section>
+
+<section id="publications">
+  <h2 onclick="toggleAccordion(this)">出版 / Publications</h2>
+  <div class="accordion-content">
+    <div class="video-wrapper">
+      <div class="video-cover">出版视频一 / Publication Video 1</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x400?book" alt="出版图示" style="width:100%; margin-top:10px;">
+      <p>这是出版项目一的示例文字说明。</p>
+    </div>
+    <div class="video-wrapper">
+      <div class="video-cover">出版视频二 / Publication Video 2</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x401?publication" alt="出版图示" style="width:100%; margin-top:10px;">
+      <p>这是出版项目二的示例文字说明。</p>
+    </div>
+    <div class="video-wrapper">
+      <div class="video-cover">出版视频三 / Publication Video 3</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x402?pages" alt="出版图示" style="width:100%; margin-top:10px;">
+      <p>这是出版项目三的示例文字说明。</p>
+    </div>
   </div>
-  <script>
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.sidebar a, .horizontal-nav a');
-    window.addEventListener('scroll', () => {
-      let current = "";
-      sections.forEach(section => {
-        const top = window.scrollY;
-        const offset = section.offsetTop - 200;
-        if (top >= offset) {
-          current = section.getAttribute("id");
-        }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${current}`) {
-          link.classList.add("active");
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+</section>
+
+<section id="collaboration">
+  <h2 onclick="toggleAccordion(this)">合作 / Collaboration</h2>
+  <div class="accordion-content">
+    <div class="video-wrapper">
+      <div class="video-cover">合作视频一 / Collaboration Video 1</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x400?community" alt="合作图示" style="width:100%; margin-top:10px;">
+      <p>这是合作项目一的示例文字说明。</p>
+    </div>
+    <div class="video-wrapper">
+      <div class="video-cover">合作视频二 / Collaboration Video 2</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x401?team" alt="合作图示" style="width:100%; margin-top:10px;">
+      <p>这是合作项目二的示例文字说明。</p>
+    </div>
+    <div class="video-wrapper">
+      <div class="video-cover">合作视频三 / Collaboration Video 3</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x402?group" alt="合作图示" style="width:100%; margin-top:10px;">
+      <p>这是合作项目三的示例文字说明。</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 onclick="toggleAccordion(this)">关于 / About</h2>
+  <div class="accordion-content">
+    <div class="video-wrapper">
+      <div class="video-cover">关于视频一 / About Video 1</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x400?studio" alt="关于图示" style="width:100%; margin-top:10px;">
+      <p>这是关于介绍项目一的示例文字说明。</p>
+    </div>
+    <div class="video-wrapper">
+      <div class="video-cover">关于视频二 / About Video 2</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x401?profile" alt="关于图示" style="width:100%; margin-top:10px;">
+      <p>这是关于介绍项目二的示例文字说明。</p>
+    </div>
+    <div class="video-wrapper">
+      <div class="video-cover">关于视频三 / About Video 3</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x402?people" alt="关于图示" style="width:100%; margin-top:10px;">
+      <p>这是关于介绍项目三的示例文字说明。</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 onclick="toggleAccordion(this)">联系 / Contact</h2>
+  <div class="accordion-content">
+    <div class="video-wrapper">
+      <div class="video-cover">联系视频一 / Contact Video 1</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x400?map" alt="联系图示" style="width:100%; margin-top:10px;">
+      <p>这是联系介绍项目一的示例文字说明。</p>
+    </div>
+    <div class="video-wrapper">
+      <div class="video-cover">联系视频二 / Contact Video 2</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x401?location" alt="联系图示" style="width:100%; margin-top:10px;">
+      <p>这是联系介绍项目二的示例文字说明。</p>
+    </div>
+    <div class="video-wrapper">
+      <div class="video-cover">联系视频三 / Contact Video 3</div>
+      <iframe src="https://player.bilibili.com/player.html?bvid=BV1Ft421h7AC&autoplay=0" frameborder="0" allowfullscreen style="width:100%; height:400px;"></iframe>
+      <img src="https://source.unsplash.com/random/800x402?wechat" alt="联系图示" style="width:100%; margin-top:10px;">
+      <p>这是联系介绍项目三的示例文字说明。</p>
+    </div>
+  </div>
+</section>
