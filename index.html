@@ -17,7 +17,7 @@
       display: flex;
     }
     .sidebar {
-      width: 120px;
+      width: 80px;
       position: fixed;
       top: 0;
       left: 0;
@@ -48,14 +48,18 @@
     .nav-cn {
       writing-mode: vertical-lr;
       text-orientation: upright;
+      text-align: center;
+      width: 100%;
     }
     .nav-en {
       writing-mode: vertical-rl;
       transform: rotate(180deg);
       font-size: 12px;
+      text-align: center;
+      width: 100%;
     }
     .main-content {
-      margin-left: 120px;
+      margin-left: 80px;
       flex: 1;
     }
     header {
@@ -246,7 +250,8 @@
 </head>
 <body>
   <div class="sidebar" id="sidebarNav">
-    <a href="#projects"><span class="nav-cn">作品</span> <span class="nav-en">Projects</span></a>
+    <a href="#projects">
+      <span class="nav-cn">作品 · Projects</span></a>
     <a href="#exhibitions"><span class="nav-cn">展览</span> <span class="nav-en">Exhibitions</span></a>
     <a href="#publications"><span class="nav-cn">研究</span> <span class="nav-en">Research</span></a>
     <a href="#collaboration"><span class="nav-cn">合作</span> <span class="nav-en">Collaboration</span></a>
