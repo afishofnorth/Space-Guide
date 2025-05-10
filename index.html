@@ -116,33 +116,7 @@ p {
   margin-top: 10px;
 }
 @media (max-width: 768px) {
-  .horizontal-nav {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-  .horizontal-nav.show {
-    display: flex;
-  }
-  body {
-    font-size: 18px;
-  }
-  h2 {
-    font-size: 22px;
-  }
-  p {
-    font-size: 16px;
-    line-height: 1.8;
-  }
-  .horizontal-nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-  .horizontal-nav a {
-    font-size: 18px;
-  }
+  .horizontal-nav,
   .sidebar {
     display: none;
   }
@@ -150,6 +124,51 @@ p {
     margin-left: 0;
   }
 }
+  .header-cn {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .header-en {
+    font-size: 20px;
+    font-weight: normal;
+  }
+  @media (max-width: 768px) {
+    header {
+      padding: 20px;
+    }
+    .header-cn {
+      font-size: 30px;
+    }
+    .header-en {
+      font-size: 22px;
+    }
+  }
+  .header-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  .header-cn {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .header-en {
+    font-size: 20px;
+    font-weight: normal;
+  }
+  @media (max-width: 768px) {
+    .header-wrap {
+      flex-direction: column;
+      gap: 4px;
+    }
+    .header-cn {
+      font-size: 30px;
+    }
+    .header-en {
+      font-size: 22px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -168,7 +187,12 @@ p {
       <span class="nav-cn">联系 Contact</span></a>
   </div>
   <div class="main-content">
-    <header onclick="toggleMobileNav()" style="position: sticky; top: 0; background: white; z-index: 1000; cursor: pointer;"> Space-Guide / 空间指南</header>
+    <header onclick="toggleMobileNav()">
+  <div class="header-wrap">
+    <span class="header-cn">空间指南</span>
+    <span class="header-en">Space-Guide</span>
+  </div>
+</header>
     <nav class="horizontal-nav" id="horizontalNav">
   <a href="#projects">作品 / Projects</a>
   <a href="#exhibitions">展览 / Exhibitions</a>
@@ -244,20 +268,33 @@ p {
     </section>
   </div>
   <script>
-  let navInitialized = false;
-  function toggleMobileNav() {
-    const nav = document.getElementById('horizontalNav');
-    nav.classList.toggle('show');
-    if (!navInitialized) {
-      navInitialized = true;
-    }
+function toggleAccordion(header) {
+  const allContents = document.querySelectorAll('.accordion-content');
+  const content = header.nextElementSibling;
+  const isOpen = content.classList.contains('open');
+  allContents.forEach(c => c.classList.remove('open'));
+  if (!isOpen) {
+    content.classList.add('open');
   }
-  function toggleAccordion(header) {
-      const content = header.nextElementSibling;
-      content.classList.toggle('open');
-    }
+}
 
-  </script>
+// 点击导航链接时展开对应 section
+const navLinks = document.querySelectorAll('.sidebar a, .horizontal-nav a');
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    const targetId = link.getAttribute('href').replace('#', '');
+    const section = document.getElementById(targetId);
+    if (section) {
+      const h2 = section.querySelector('h2');
+      if (h2 && h2.nextElementSibling) {
+  const allContents = document.querySelectorAll('.accordion-content');
+  allContents.forEach(c => c.classList.remove('open'));
+  h2.nextElementSibling.classList.add('open');
+}
+    }
+  });
+});
+</script>
   
 </body>
 </html>
