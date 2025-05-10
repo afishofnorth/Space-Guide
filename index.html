@@ -47,14 +47,24 @@
     }
     section {
       max-width: 900px;
-      margin: 80px auto;
+      margin: 40px auto;
       padding: 0 20px;
     }
     h2 {
       font-size: 20px;
       border-bottom: 1px solid #ddd;
       padding-bottom: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      background-color: #fff;
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .accordion-content.open {
+      max-height: 2000px;
     }
     footer {
       text-align: center;
@@ -127,66 +137,96 @@
     <header>Space-Guide / 空间指南</header>
 
     <section id="projects">
-      <h2>作品 / Projects</h2>
-      <!-- 原项目内容略 -->
+      <h2 onclick="toggleAccordion(this)">作品 / Projects</h2>
+      <div class="accordion-content">
+        <div class="project">
+          <h3>1</h3>
+          <div class="project-gallery-wrapper">
+            <button class="scroll-button left" onclick="this.nextElementSibling.scrollBy({left: -300, behavior: 'smooth'})">◂</button>
+            <div class="project-gallery">
+              <img src="https://images.unsplash.com/photo-1600585152915-0c79c9d1786d" alt="1-1">
+              <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809" alt="1-2">
+              <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6" alt="1-3">
+            </div>
+            <button class="scroll-button right" onclick="this.previousElementSibling.scrollBy({left: 300, behavior: 'smooth'})">▸</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="exhibitions">
-      <h2>展览 / Exhibitions</h2>
-      <table class="item-table">
-        <tr><th>时间 / Date</th><th>地点 / Venue</th><th>展览名 / Title</th><th>简介 / Description</th></tr>
-        <tr>
-          <td>2024.06</td>
-          <td>成都当代影像馆</td>
-          <td>空间发生 / Spatial Occurrence</td>
-          <td>探索城市微空间与行为场域的展览。<br>Explores micro-urban spaces and behavioral fields.</td>
-        </tr>
-        <tr>
-          <td>2023.11</td>
-          <td>重庆鹅岭美术馆</td>
-          <td>日常介入 / Everyday Intervention</td>
-          <td>聚焦公共艺术在日常场景中的介入与反馈。<br>Focus on how public art intervenes in everyday urban life.</td>
-        </tr>
-      </table>
+      <h2 onclick="toggleAccordion(this)">展览 / Exhibitions</h2>
+      <div class="accordion-content">
+        <table class="item-table">
+          <tr><th>时间 / Date</th><th>地点 / Venue</th><th>展览名 / Title</th><th>简介 / Description</th></tr>
+          <tr>
+            <td>2024.06</td>
+            <td>成都当代影像馆</td>
+            <td>空间发生 / Spatial Occurrence</td>
+            <td>探索城市微空间与行为场域的展览。<br>Explores micro-urban spaces and behavioral fields.</td>
+          </tr>
+          <tr>
+            <td>2023.11</td>
+            <td>重庆鹅岭美术馆</td>
+            <td>日常介入 / Everyday Intervention</td>
+            <td>聚焦公共艺术在日常场景中的介入与反馈。<br>Focus on how public art intervenes in everyday urban life.</td>
+          </tr>
+        </table>
+      </div>
     </section>
 
     <section id="publications">
-      <h2>出版 / Publications</h2>
-      <table class="item-table">
-        <tr><th>年份 / Year</th><th>书名 / Title</th><th>内容简介 / Description</th></tr>
-        <tr>
-          <td>2024</td>
-          <td>空间在地：重塑公共美学<br>Spatially Situated: Remaking Public Aesthetics</td>
-          <td>收录就地设计与社区合作的研究成果。<br>Features research and case studies of spatial and community-based design.</td>
-        </tr>
-        <tr>
-          <td>2023</td>
-          <td>City Material</td>
-          <td>关于材料文化与城市语境的研究合集。<br>An anthology of material culture and contextual urbanism.</td>
-        </tr>
-      </table>
+      <h2 onclick="toggleAccordion(this)">出版 / Publications</h2>
+      <div class="accordion-content">
+        <table class="item-table">
+          <tr><th>年份 / Year</th><th>书名 / Title</th><th>内容简介 / Description</th></tr>
+          <tr>
+            <td>2024</td>
+            <td>空间在地：重塑公共美学<br>Spatially Situated: Remaking Public Aesthetics</td>
+            <td>收录就地设计与社区合作的研究成果。<br>Features research and case studies of spatial and community-based design.</td>
+          </tr>
+          <tr>
+            <td>2023</td>
+            <td>City Material</td>
+            <td>关于材料文化与城市语境的研究合集。<br>An anthology of material culture and contextual urbanism.</td>
+          </tr>
+        </table>
+      </div>
     </section>
 
     <section id="collaboration">
-      <h2>合作 / Collaboration</h2>
-      <p>我们欢迎与机构、学校、社区组织进行合作，开展项目共建、展览策划、工作坊组织、研究出版等多维度合作方式。<br>
-      We welcome collaborations with institutions, schools, and communities in co-creation, exhibitions, workshops, and publishing.</p>
+      <h2 onclick="toggleAccordion(this)">合作 / Collaboration</h2>
+      <div class="accordion-content">
+        <p>我们欢迎与机构、学校、社区组织进行合作，开展项目共建、展览策划、工作坊组织、研究出版等多维度合作方式。<br>
+        We welcome collaborations with institutions, schools, and communities in co-creation, exhibitions, workshops, and publishing.</p>
+      </div>
     </section>
 
     <section id="about">
-      <h2>关于 / About</h2>
-      <p>空间指南是一家关注本土文化、在地性、环境语境与社会参与的独立设计事务所，强调空间、创意与记忆之间的深度对话。<br />
-      Space-Guide is an independent design studio dedicated to local culture, contextual thinking, and community engagement through spatial and creative practices.</p>
+      <h2 onclick="toggleAccordion(this)">关于 / About</h2>
+      <div class="accordion-content">
+        <p>空间指南是一家关注本土文化、在地性、环境语境与社会参与的独立设计事务所，强调空间、创意与记忆之间的深度对话。<br />
+        Space-Guide is an independent design studio dedicated to local culture, contextual thinking, and community engagement through spatial and creative practices.</p>
+      </div>
     </section>
 
     <section id="contact">
-      <h2>联系 / Contact</h2>
-      <p>邮箱 / Email：老六<br />
-      微信 / WeChat：老六<br />
-      地址 / Address：重庆市九龙坡</p>
+      <h2 onclick="toggleAccordion(this)">联系 / Contact</h2>
+      <div class="accordion-content">
+        <p>邮箱 / Email：老六<br />
+        微信 / WeChat：老六<br />
+        地址 / Address：重庆市九龙坡</p>
+      </div>
     </section>
 
     <footer>&copy; 2025 Space-Guide / 空间指南</footer>
   </div>
+
+  <script>
+    function toggleAccordion(header) {
+      const content = header.nextElementSibling;
+      content.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
