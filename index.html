@@ -112,79 +112,42 @@
       font-size: 14px;
     }
     @media (max-width: 768px) {
-      body {
-        font-size: 18px;
-      }
-      h2 {
-        font-size: 22px;
-      }
-      p {
-        font-size: 16px;
-        line-height: 1.8;
-      }
-      .horizontal-nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        animation: fadeInDown 0.5s ease forwards;
-      }
-      .horizontal-nav a {
-        font-size: 18px;
-        opacity: 0;
-        transform: translateY(-10px);
-        animation: fadeInItem 0.6s ease forwards;
-      }
-      .horizontal-nav a:nth-child(1) { animation-delay: 0.1s; }
-      .horizontal-nav a:nth-child(2) { animation-delay: 0.2s; }
-      .horizontal-nav a:nth-child(3) { animation-delay: 0.3s; }
-      .horizontal-nav a:nth-child(4) { animation-delay: 0.4s; }
-      .horizontal-nav a:nth-child(5) { animation-delay: 0.5s; }
-      .horizontal-nav a:nth-child(6) { animation-delay: 0.6s; }
-    }
+  body {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .horizontal-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    animation: fadeInDown 0.5s ease forwards;
+  }
+  .horizontal-nav a {
+    font-size: 18px;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInItem 0.6s ease forwards;
+  }
+  .horizontal-nav a:nth-child(1) { animation-delay: 0.1s; }
+  .horizontal-nav a:nth-child(2) { animation-delay: 0.2s; }
+  .horizontal-nav a:nth-child(3) { animation-delay: 0.3s; }
+  .horizontal-nav a:nth-child(4) { animation-delay: 0.4s; }
+  .horizontal-nav a:nth-child(5) { animation-delay: 0.5s; }
+  .horizontal-nav a:nth-child(6) { animation-delay: 0.6s; }
 
-    @keyframes fadeInItem {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-      body {
-        font-size: 18px;
-      }
-      h2 {
-        font-size: 22px;
-      }
-      p {
-        font-size: 16px;
-        line-height: 1.8;
-      }
-      .horizontal-nav a {
-        font-size: 16px;
-      }
-      body {
-        font-size: 15px;
-      }
-      h2 {
-        font-size: 18px;
-      }
-      p {
-        font-size: 13px;
-        line-height: 1.6;
-      }
-      .sidebar {
-        display: none !important;
-      }
+  .sidebar {
+    display: flex !important;
+  }
+  .main-content {
+    margin-left: 80px !important;
+  }
+}
       .main-content {
         margin-left: 0 !important;
       }
