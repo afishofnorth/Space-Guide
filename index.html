@@ -129,6 +129,41 @@
       top: 60px;
       z-index: 999;
       background: #fff;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .horizontal-nav a {
+      flex-shrink: 0;
+    }
+    .menu-toggle {
+      display: inline-block;
+    }
+  
+    body {
+      font-size: 15px;
+    }
+    h2 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .sidebar {
+      display: none !important;
+    }
+    .main-content {
+      margin-left: 0 !important;
+    }
+    .horizontal-nav {
+      position: sticky;
+      top: 60px;
+      z-index: 999;
+      background: #fff;
       display: flex !important;
       flex-direction: row !important;
       justify-content: center;
