@@ -35,26 +35,16 @@
     .sidebar a {
       text-decoration: none;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 4px;
+      display: block;
+      padding: 4px 8px;
       transition: color 0.3s;
+      text-align: center;
     }
     .sidebar a:hover,
     .sidebar a.active {
       color: var(--highlight-bg);
     }
     .nav-cn {
-      writing-mode: vertical-lr;
-      text-orientation: upright;
-      text-align: center;
-      width: 100%;
-    }
-    .nav-en {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      font-size: 12px;
       text-align: center;
       width: 100%;
     }
@@ -68,6 +58,11 @@
       font-size: 32px;
       font-weight: 800;
       letter-spacing: 2px;
+      cursor: pointer;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     .horizontal-nav {
       display: flex;
@@ -80,8 +75,11 @@
       text-decoration: none;
       color: #111;
       padding: 6px 10px;
+      transition: color 0.3s;
     }
-    
+    .horizontal-nav a.active {
+      color: var(--highlight-bg);
+    }
     h2 {
       text-align: center;
       font-size: 20px;
@@ -112,141 +110,44 @@
       font-size: 14px;
     }
     @media (max-width: 768px) {
-    body {
-      font-size: 15px;
-    }
-    h2 {
-      font-size: 18px;
-    }
-    p {
-      font-size: 13px;
-      line-height: 1.6;
-    }
-    .sidebar {
-      display: none !important;
-    }
-    .main-content {
-      margin-left: 0 !important;
-    }
-    .horizontal-nav {
-      position: sticky;
-      top: 60px;
-      z-index: 999;
-      background: #fff;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      width: 100%;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-    .horizontal-nav a {
-      flex-shrink: 0;
-    }
-    .menu-toggle {
-      display: inline-block;
-    }
-  
-    body {
-      font-size: 15px;
-    }
-    h2 {
-      font-size: 18px;
-    }
-    p {
-      font-size: 13px;
-      line-height: 1.6;
-    }
-    .sidebar {
-      display: none !important;
-    }
-    .main-content {
-      margin-left: 0 !important;
-    }
-    .horizontal-nav {
-      position: sticky;
-      top: 60px;
-      z-index: 999;
-      background: #fff;
-      display: flex !important;
-      flex-direction: row !important;
-      justify-content: center;
-      max-height: none !important;
-    }
-    .sidebar {
-      width: 60px;
-      left: 0;
-      padding: 0;
-    }
-    .main-content {
-      margin-left: 60px;
-    }
-    .horizontal-nav {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-    }
-    .horizontal-nav.show {
-      max-height: 500px;
-    }
+      body {
+        font-size: 15px;
+      }
+      h2 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
       .sidebar {
-        display: none;
+        display: none !important;
+      }
+      .main-content {
+        margin-left: 0 !important;
+      }
+      .horizontal-nav {
+        position: sticky;
+        top: 60px;
+        z-index: 999;
+        background: #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        max-height: 0;
+        transition: max-height 0.4s ease;
+      }
+      .horizontal-nav.show {
+        max-height: 500px;
+      }
+      .horizontal-nav a {
+        flex-shrink: 0;
       }
     }
   </style>
-<style>
-  .menu-toggle {
-    display: none;
-    font-size: 22px;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  @media (max-width: 768px) {
-    header {
-      font-size: 18px;
-      padding: 20px;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    }
-    .horizontal-nav {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      flex-direction: column;
-      align-items: center;
-      background: white;
-      position: absolute;
-      width: 100%;
-      top: 60px;
-      left: 0;
-      z-index: 999;
-      padding-bottom: 20px;
-    }
-    .horizontal-nav.show {
-      max-height: 500px;
-    }
-    .menu-toggle {
-      display: inline-block;
-    }
-    .horizontal-nav {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      background: white;
-      position: absolute;
-      width: 100%;
-      top: 60px;
-      left: 0;
-      z-index: 999;
-      padding-bottom: 20px;
-    }
-    .horizontal-nav.show {
-      display: flex;
-    }
-    .menu-toggle {
-      display: inline-block;
-    }
-  }
-</style>
 </head>
 <body>
   <div class="sidebar" id="sidebarNav">
