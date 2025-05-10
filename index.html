@@ -108,6 +108,14 @@
       font-size: 14px;
     }
     @media (max-width: 768px) {
+    .sidebar {
+      width: 60px;
+      left: 0;
+      padding: 0;
+    }
+    .main-content {
+      margin-left: 60px;
+    }
     .horizontal-nav {
       max-height: 0;
       overflow: hidden;
@@ -179,7 +187,7 @@
   <div class="sidebar" id="sidebarNav">
     <a href="#projects"><span class="nav-cn">作品</span> <span class="nav-en">Projects</span></a>
     <a href="#exhibitions"><span class="nav-cn">展览</span> <span class="nav-en">Exhibitions &amp; Events</span></a>
-    <a href="#publications"><span class="nav-cn">出版</span> <span class="nav-en">Publications</span></a>
+    <a href="#publications"><span class="nav-cn">研究</span> <span class="nav-en">Research</span></a>
     <a href="#collaboration"><span class="nav-cn">合作</span> <span class="nav-en">Collaboration</span></a>
     <a href="#about"><span class="nav-cn">关于</span> <span class="nav-en">About</span></a>
     <a href="#contact"><span class="nav-cn">联系</span> <span class="nav-en">Contact</span></a>
@@ -189,7 +197,7 @@
     <nav class="horizontal-nav" id="horizontalNav">
       <a href="#projects">作品 / Projects</a>
       <a href="#exhibitions">展览&amp;活动 / Exhibitions &amp; Events</a>
-      <a href="#publications">出版 / Publications</a>
+      <a href="#publications">研究 / Research</a>
       <a href="#collaboration">合作 / Collaboration</a>
       <a href="#about">关于 / About</a>
       <a href="#contact">联系 / Contact</a>
@@ -216,11 +224,11 @@
     </section>
 
     <section id="publications">
-      <h2 onclick="toggleAccordion(this)">出版 / Publications</h2>
+      <h2 onclick="toggleAccordion(this)">研究 / Research</h2>
       <div class="accordion-content" style="text-align: center;">
         <div class="item-block">
           <img src="https://source.unsplash.com/random/800x600?book" alt="Publication">
-          <p>本出版项目收录了空间设计与社会研究成果。</p>
+          <p>本研究项目聚焦城市空间、公众参与与设计实践。</p>
         </div>
       </div>
     </section>
@@ -289,5 +297,6 @@
       });
     });
   </script>
+  <footer style="text-align:center; font-size:12px; color:#777; margin:60px 0 20px;">© 2025 Space-Guide / 空间指南</footer>
 </body>
 </html>
