@@ -109,6 +109,22 @@
     }
     @media (max-width: 768px) {
     .sidebar {
+      display: none !important;
+    }
+    .main-content {
+      margin-left: 0 !important;
+    }
+    .horizontal-nav {
+      position: sticky;
+      top: 60px;
+      z-index: 999;
+      background: #fff;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: center;
+      max-height: none !important;
+    }
+    .sidebar {
       width: 60px;
       left: 0;
       padding: 0;
