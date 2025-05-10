@@ -39,17 +39,11 @@
       flex-direction: column;
       align-items: center;
       padding: 4px;
-      transition: background 0.3s, color 0.3s;
+      transition: color 0.3s;
     }
-    .sidebar a:hover {
-      background: var(--highlight-bg);
-      color: var(--highlight-text);
-      border-radius: 4px;
-    }
+    .sidebar a:hover,
     .sidebar a.active {
-      background: var(--highlight-bg);
-      color: var(--highlight-text);
-      border-radius: 4px;
+      color: var(--highlight-bg);
     }
     .nav-cn {
       writing-mode: vertical-lr;
@@ -104,20 +98,17 @@
     .accordion-content.open {
       max-height: 2000px;
     }
-    .video-cover {
-      background-color: #000;
-      color: #fff;
-      padding: 20px;
-      font-size: 18px;
-      text-align: center;
-      margin-bottom: 10px;
+    .item-block {
+      margin-bottom: 30px;
     }
-    img {
+    .item-block img {
       width: 100%;
+      height: auto;
       margin-top: 10px;
     }
     p {
-      margin-bottom: 40px;
+      margin-top: 8px;
+      font-size: 14px;
     }
     @media (max-width: 768px) {
       .sidebar {
@@ -145,6 +136,66 @@
       <a href="#about">关于 / About</a>
       <a href="#contact">联系 / Contact</a>
     </nav>
+
+    <section id="projects">
+      <h2 onclick="toggleAccordion(this)">作品 / Projects</h2>
+      <div class="accordion-content">
+        <div class="item-block">
+          <img src="https://source.unsplash.com/random/800x600?architecture" alt="Project">
+          <p>这是一个关于城市空间的作品示例，结合在地性与材料表达。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exhibitions">
+      <h2 onclick="toggleAccordion(this)">展览 / Exhibitions</h2>
+      <div class="accordion-content">
+        <div class="item-block">
+          <img src="https://source.unsplash.com/random/800x600?exhibition" alt="Exhibition">
+          <p>展示我们与社区合作策划的互动展览项目。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2 onclick="toggleAccordion(this)">出版 / Publications</h2>
+      <div class="accordion-content">
+        <div class="item-block">
+          <img src="https://source.unsplash.com/random/800x600?book" alt="Publication">
+          <p>本出版项目收录了空间设计与社会研究成果。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="collaboration">
+      <h2 onclick="toggleAccordion(this)">合作 / Collaboration</h2>
+      <div class="accordion-content">
+        <div class="item-block">
+          <img src="https://source.unsplash.com/random/800x600?team" alt="Collaboration">
+          <p>我们欢迎与不同机构共同开展项目、研究与展览。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 onclick="toggleAccordion(this)">关于 / About</h2>
+      <div class="accordion-content">
+        <div class="item-block">
+          <img src="https://source.unsplash.com/random/800x600?studio" alt="About">
+          <p>空间指南致力于在地性设计与公共艺术研究。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 onclick="toggleAccordion(this)">联系 / Contact</h2>
+      <div class="accordion-content">
+        <div class="item-block">
+          <img src="https://source.unsplash.com/random/800x600?map" alt="Contact">
+          <p>邮箱 / Email: contact@spaceguide.cn<br>地址 / Address: 重庆九龙坡</p>
+        </div>
+      </div>
+    </section>
   </div>
   <script>
     function toggleAccordion(header) {
