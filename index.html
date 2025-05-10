@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>就地设计 / Here-Design</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Helvetica, sans-serif;
+      background-color: #fff;
+      color: #111;
+    }
+    header {
+      padding: 40px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    .gallery {
+      display: flex;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+    }
+    .gallery img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      scroll-snap-align: start;
+    }
+    section {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      font-size: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    footer {
+      text-align: center;
+      font-size: 12px;
+      margin: 100px 0 40px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <header>Here-Design / 就地设计</header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="gallery">
+    <img src="https://source.unsplash.com/random/1200x800?architecture" alt="Project Image 1">
+    <img src="https://source.unsplash.com/random/1201x800?design" alt="Project Image 2">
+    <img src="https://source.unsplash.com/random/1202x800?space" alt="Project Image 3">
+  </div>
+
+  <section id="about">
+    <h2>About 就地设计</h2>
+    <p>就地设计是一家关注在地性、环境语境与社会参与的独立设计事务所，强调空间、材质与记忆之间的深度对话。</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>我们致力于城市空间改造、文化遗产再利用、公共艺术装置等领域的原创性实践。</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>邮箱：info@here-design.cn<br />
+    微信：HereDesignStudio<br />
+    地址：重庆市渝中区（示例）</p>
+  </section>
+
+  <footer>&copy; 2025 Here-Design / 就地设计</footer>
+</body>
+</html>
