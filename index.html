@@ -257,17 +257,37 @@ p {
   <div class="accordion-content" style="text-align: center;">
     <div class="item-block">
       <h3 style="font-style: italic;">作品1-1</h3>
-      <div class="gallery" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px;">
-        <img src="作品1-0.jpg" alt="作品1-1 图1">
-        <img src="作品1-1.jpg" alt="作品1-1 图2">
-        <img src="作品1-2.jpg" alt="作品1-1 图3">
-        <img src="作品1-3.jpg" alt="作品1-1 图4">
-        <img src="作品1-4.jpg" alt="作品1-1 图5">
-        <img src="作品1-5.jpg" alt="作品1-1 图6">
-        <img src="作品1-6.jpg" alt="作品1-1 图7">
-        <img src="作品1-7.jpg" alt="作品1-1 图8">
-        <img src="作品1-8.jpg" alt="作品1-1 图9">
-      </div>
+      <div class="gallery" style="position: relative; width: 100%; overflow: hidden;">
+  <div class="slider" style="display: flex; transition: transform 0.3s ease;">
+    <img src="作品1-0.jpg" alt="作品1-1 图1" style="width: 100%; flex-shrink: 0;">
+    <img src="作品1-1.jpg" alt="作品1-1 图2" style="width: 100%; flex-shrink: 0;">
+    <img src="作品1-2.jpg" alt="作品1-1 图3" style="width: 100%; flex-shrink: 0;">
+    <img src="作品1-3.jpg" alt="作品1-1 图4" style="width: 100%; flex-shrink: 0;">
+    <img src="作品1-4.jpg" alt="作品1-1 图5" style="width: 100%; flex-shrink: 0;">
+    <img src="作品1-5.jpg" alt="作品1-1 图6" style="width: 100%; flex-shrink: 0;">
+    <img src="作品1-6.jpg" alt="作品1-1 图7" style="width: 100%; flex-shrink: 0;">
+    <img src="作品1-7.jpg" alt="作品1-1 图8" style="width: 100%; flex-shrink: 0;">
+    <img src="作品1-8.jpg" alt="作品1-1 图9" style="width: 100%; flex-shrink: 0;">
+  </div>
+  <button class="prev" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">←</button>
+  <button class="next" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">→</button>
+</div>
+<script>
+(function() {
+  const gallery = document.querySelector('.gallery');
+  const slider = gallery.querySelector('.slider');
+  const images = slider.querySelectorAll('img');
+  const prevBtn = gallery.querySelector('.prev');
+  const nextBtn = gallery.querySelector('.next');
+  let index = 0;
+  const scrollToIndex = i => {
+    index = Math.max(0, Math.min(i, images.length - 1));
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  };
+  prevBtn.addEventListener('click', () => scrollToIndex(index - 1));
+  nextBtn.addEventListener('click', () => scrollToIndex(index + 1));
+})();
+</script>
       <p>这是作品1-1的简要说明，描述其在地性、材料或空间创意。</p>
     </div>
     <div class="item-block">
