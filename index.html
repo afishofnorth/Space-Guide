@@ -1,294 +1,404 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>空间气质指南 / Space-Guide</title>
   <style>
-    :root {
-      --highlight-bg: rgb(102, 8, 116);
-      --highlight-text: #111;
-      --nav-width: 100px;
-      --breakpoint: 768px;
-      --font-base: 14px;
-      --spacing: 1rem;
-    }
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Helvetica, sans-serif;
-      background: #fff;
-      color: var(--highlight-text);
-      display: flex;
-      min-height: 100vh;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    /* Sidebar */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: var(--nav-width);
-      height: 100vh;
-      background: #000;
-      border-right: 1px solid #eee;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      font-size: calc(var(--font-base) - 1px);
-      z-index: 999;
-    }
-    .sidebar a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      writing-mode: vertical-rl;
-      text-align: center;
-      padding: var(--spacing) 0;
-      transition: color 0.3s;
-      word-break: break-word;
-    }
-    .sidebar a:hover {
-      color: var(--highlight-bg);
-    }
-    /* Main content */
-    .main-content {
-      margin-left: var(--nav-width);
-      flex: 1;
-    }
-    header {
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      padding: var(--spacing) 0;
-      text-align: center;
-      cursor: pointer;
-    }
-    .header-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-    }
+:root {
+  --highlight-bg: rgb(102, 8, 116);
+  --highlight-text: #111;
+}
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  background-color: #fff;
+  color: #111;
+  display: flex;
+}
+.sidebar {
+  width: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #000;
+  border-right: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
+  font-size: 14px;
+  z-index: 999;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  padding: 8px 0;
+  transition: color 0.3s;
+  text-align: center;
+  font-weight: normal;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: initial;
+  font-size: 13px;
+}
+.sidebar a:hover {
+  color: var(--highlight-bg);
+}
+.nav-cn {
+  text-align: center;
+  width: 100%;
+}
+.main-content {
+  margin-left: 100px;
+  flex: 1;
+}
+header {
+  padding: 40px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  cursor: pointer;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.horizontal-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+.horizontal-nav a {
+  text-decoration: none;
+  color: #111;
+  padding: 6px 10px;
+  transition: color 0.3s;
+  font-weight: bold;
+}
+.horizontal-nav a:hover {
+  color: var(--highlight-bg);
+}
+h2 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: #fff;
+}
+p {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.accordion-content.open {
+  max-height: 2000px;
+}
+.item-block {
+  margin-bottom: 30px;
+}
+.item-block img {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .horizontal-nav,
+  .sidebar {
+    display: none !important;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+  section, .accordion-content, .item-block {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  section h2 {
+    width: 100%;
+    text-align: center;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}
+  
+  
+  @media (max-width: 768px) {
+  .main-content {
+    margin-left: 0 !important;
+    padding: 0 20px;
+  }
+  header {
+    padding: 20px;
+  }
+  .header-cn {
+    font-size: 30px;
+  }
+  .header-en {
+    font-size: 22px;
+  }
     .header-cn {
-      font-size: 1.75rem;
-      font-weight: 800;
-      letter-spacing: 2px;
+      font-size: 30px;
     }
     .header-en {
-      font-size: 1rem;
+      font-size: 22px;
     }
-    nav.horizontal-nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 0.5rem 0 2rem;
-      font-size: var(--font-base);
+  }
+  .header-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  .header-cn {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .header-en {
+    font-size: 20px;
+    font-weight: normal;
+  }
+  @media (max-width: 768px) {
+    .header-wrap {
+      flex-direction: column;
+      gap: 4px;
     }
-    nav.horizontal-nav a {
-      font-weight: bold;
-      padding: 0.25rem 0.5rem;
-      transition: color 0.3s;
+    .header-cn {
+      font-size: 30px;
     }
-    nav.horizontal-nav a:hover {
-      color: var(--highlight-bg);
+    .header-en {
+      font-size: 22px;
     }
-    section {
-      padding: 0 var(--spacing);
-    }
-    h2 {
-      font-size: 1rem;
-      font-weight: normal;
-      border-bottom: 1px solid #ddd;
-      padding: 0.5rem 0;
-      margin-bottom: 1rem;
-      text-align: center;
-      background: #fff;
-      cursor: pointer;
-    }
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      text-align: center;
-    }
-    .accordion-content.open {
-      max-height: 2000px;
-    }
-    .item-block {
-      margin-bottom: 2rem;
-    }
-    .item-block img {
-      width: 100%;
-      height: auto;
-      margin-top: 1rem;
-    }
-    .gallery {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
-    .gallery .slider {
-      display: flex;
-      transition: transform 0.3s ease;
-    }
-    .gallery .slider img {
-      flex-shrink: 0;
-      width: 100%;
-      object-fit: contain;
-    }
-    .gallery .prev,
-    .gallery .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 2;
-      background: rgba(255,255,255,0.7);
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-    .gallery .prev { left: 10px; }
-    .gallery .next { right: 10px; }
-    /* Intro overlay */
-    #intro {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
-      transition: opacity 1s ease;
-    }
-    #intro img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-    #intro .intro-text {
-      color: #fff;
-      text-align: center;
-      width: 80%;
-      font-size: 12vw;
-      font-weight: bold;
-      line-height: 1.2;
-      max-width: 600px;
-    }
-    /* Responsive */
-    @media (max-width: var(--breakpoint)) {
-      .sidebar,
-      nav.horizontal-nav {
-        display: none;
-      }
-      .main-content {
-        margin-left: 0;
-        padding: 0 1rem;
-      }
-      header {
-        padding: 1rem 0;
-      }
-      .header-cn {
-        font-size: 1.5rem;
-      }
-      .header-en {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <div id="intro">
-    <img src="导图图片2.jpg" alt="Intro">
-    <div class="intro-text">空间气质指南<br><span style="font-size:0.5em; font-weight:normal;">Space-Guide</span></div>
+  <div id="intro" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #000; display: flex; align-items: center; justify-content: center; z-index: 10000; transition: opacity 1s ease; opacity: 1;">
+    <img src="导图图片2.jpg" alt="Intro" style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+    <div style="color: white; text-align: center; font-size: 12vw; font-weight: bold; line-height: 1.2; z-index: 1;">
+      空间气质指南<br><span style="font-size: 0.5em; font-weight: normal;">Space-Guide</span>
+    </div>
   </div>
-  <aside class="sidebar" id="sidebarNav">
-    <a href="#projects">作品<br><span style="font-size:0.75rem;">Projects</span></a>
-    <a href="#exhibitions">展览<br><span style="font-size:0.75rem;">Exhibitions</span></a>
-    <a href="#publications">研究<br><span style="font-size:0.75rem;">Research</span></a>
-    <a href="#collaboration">合作<br><span style="font-size:0.75rem;">Collaboration</span></a>
-    <a href="#about">关于<br><span style="font-size:0.75rem;">About</span></a>
-    <a href="#contact">联系<br><span style="font-size:0.75rem;">Contact</span></a>
-  </aside>
-  <main class="main-content">
+  </div>
+  <div class="sidebar" id="sidebarNav">
+  <a href="#projects">
+    <span class="nav-cn">
+      <span style="writing-mode: vertical-rl; text-align: center; display: inline-block; word-break: break-word; line-height: 1.2;">
+  作品<br><span style="font-size: 12px;">Projects</span>
+</span>
+    </span>
+  </a>
+  <a href="#exhibitions">
+    <span class="nav-cn">
+      <span style="writing-mode: vertical-rl; text-align: center; display: inline-block; word-break: break-all;">展览<br>Exhibitions</span>
+    </span>
+  </a>
+  <a href="#publications">
+  <span class="nav-cn">
+    <span style="writing-mode: vertical-rl; text-align: center; display: inline-block; word-break: break-word; line-height: 1.2;">
+      研究<br><span style="font-size: 12px;">Research</span>
+    </span>
+  </span>
+</a>
+  <a href="#collaboration">
+    <span class="nav-cn">
+      <span style="writing-mode: vertical-rl; text-align: center; display: inline-block; word-break: break-all;">合作<br>Collaboration</span>
+    </span>
+  </a>
+  <a href="#about">
+    <span class="nav-cn">
+      <span style="writing-mode: vertical-rl; text-align: center; display: inline-block;">关于<br>About</span>
+    </span>
+  </a>
+  <a href="#contact">
+    <span class="nav-cn">
+      <span style="writing-mode: vertical-rl; text-align: center; display: inline-block;">联系<br>Contact</span>
+    </span>
+  </a>
+</div>
+  <div class="main-content">
     <header onclick="toggleMobileNav()">
-      <div class="header-wrap">
-        <span class="header-cn">空间气质指南</span>
-        <span class="header-en">Space-Guide</span>
-      </div>
-    </header>
+  <div class="header-wrap">
+  <span class="header-cn" style="font-weight: normal; font-size: 28px;">空间气质指南</span>
+  <span class="header-en" style="font-weight: normal; font-size: 28px;">Space-Guide</span>
+</div>
+</header>
     <nav class="horizontal-nav" id="horizontalNav">
-      <a href="#projects">作品 / Projects</a>
-      <a href="#exhibitions">展览 / Exhibitions</a>
-      <a href="#publications">研究 / Research</a>
-      <a href="#collaboration">合作 / Collaboration</a>
-      <a href="#about">关于 / About</a>
-      <a href="#contact">联系 / Contact</a>
-    </nav>
+  <a href="#projects">作品 / Projects</a>
+  <a href="#exhibitions">展览 / Exhibitions</a>
+  <a href="#publications">研究 / Research</a>
+  <a href="#collaboration">合作 / Collaboration</a>
+  <a href="#about">关于 / About</a>
+  <a href="#contact">联系 / Contact</a>
+</nav>
+
     <section id="projects">
-      <h2 onclick="toggleAccordion(this)">作品 / Projects</h2>
-      <div class="accordion-content">
-        <div class="item-block">
-          <h3 style="font-style:italic;">作品1-1</h3>
-          <div class="gallery">
-            <div class="slider">
-              <img src="作品1-0.jpg" alt="作品1-1 图1">
-              <img src="作品1-1.jpg" alt="作品1-1 图2">
-              <!-- 更多图片 -->
-            </div>
-            <button class="prev">←</button>
-            <button class="next">→</button>
-          </div>
-          <p>这是作品1-1的简要说明，描述其在地性、材料或空间创意。</p>
-        </div>
-      </div>
-    </section>
+  <h2 onclick="toggleAccordion(this)">作品 / Projects</h2>
+  <div class="accordion-content" style="text-align: center;">
+    <div class="item-block">
+      <h3 style="font-style: italic;">作品1-1</h3>
+      <img src="https://source.unsplash.com/random/800x600?project1a" alt="作品1-1 图1">
+      <img src="https://source.unsplash.com/random/800x600?project1b" alt="作品1-1 图2">
+      <img src="https://source.unsplash.com/random/800x600?project1c" alt="作品1-1 图3">
+      <img src="https://source.unsplash.com/random/800x600?project1d" alt="作品1-1 图4">
+      <img src="https://source.unsplash.com/random/800x600?project1e" alt="作品1-1 图5">
+      <p>这是作品1-1的简要说明，描述其在地性、材料或空间创意。</p>
+    </div>
+    <div class="item-block">
+      <h3 style="font-style: italic;">作品2-1</h3>
+      <img src="https://source.unsplash.com/random/800x600?project2a" alt="作品2-1 图1">
+      <img src="https://source.unsplash.com/random/800x600?project2b" alt="作品2-1 图2">
+      <img src="https://source.unsplash.com/random/800x600?project2c" alt="作品2-1 图3">
+      <img src="https://source.unsplash.com/random/800x600?project2d" alt="作品2-1 图4">
+      <img src="https://source.unsplash.com/random/800x600?project2e" alt="作品2-1 图5">
+      <p>这是作品2-1的简要说明，强调与场地之间的对话关系。</p>
+    </div>
+    <div class="item-block">
+      <h3 style="font-style: italic;">作品3-1</h3>
+      <img src="https://source.unsplash.com/random/800x600?project3a" alt="作品3-1 图1">
+      <img src="https://source.unsplash.com/random/800x600?project3b" alt="作品3-1 图2">
+      <img src="https://source.unsplash.com/random/800x600?project3c" alt="作品3-1 图3">
+      <img src="https://source.unsplash.com/random/800x600?project3d" alt="作品3-1 图4">
+      <img src="https://source.unsplash.com/random/800x600?project3e" alt="作品3-1 图5">
+      <p>这是作品3-1的简要说明，聚焦社区营造或材料逻辑。</p>
+    </div>
+    <div class="item-block">
+      <h3 style="font-style: italic;">作品4-1</h3>
+      <img src="https://source.unsplash.com/random/800x600?project4a" alt="作品4-1 图1">
+      <img src="https://source.unsplash.com/random/800x600?project4b" alt="作品4-1 图2">
+      <img src="https://source.unsplash.com/random/800x600?project4c" alt="作品4-1 图3">
+      <img src="https://source.unsplash.com/random/800x600?project4d" alt="作品4-1 图4">
+      <img src="https://source.unsplash.com/random/800x600?project4e" alt="作品4-1 图5">
+      <p>这是作品4-1的简要说明，强调公共性与时空感受。</p>
+    </div>
+    <div class="item-block">
+      <h3 style="font-style: italic;">作品5-1</h3>
+      <img src="https://source.unsplash.com/random/800x600?project5a" alt="作品5-1 图1">
+      <img src="https://source.unsplash.com/random/800x600?project5b" alt="作品5-1 图2">
+      <img src="https://source.unsplash.com/random/800x600?project5c" alt="作品5-1 图3">
+      <img src="https://source.unsplash.com/random/800x600?project5d" alt="作品5-1 图4">
+      <img src="https://source.unsplash.com/random/800x600?project5e" alt="作品5-1 图5">
+      <p>这是作品5-1的简要说明，结合日常生活与空间再定义。</p>
+    </div>
+    </div>
+</section>
+
     <section id="exhibitions">
       <h2 onclick="toggleAccordion(this)">展览 / Exhibitions</h2>
-      <div class="accordion-content">
+      <div class="accordion-content" style="text-align: center;">
         <div class="item-block">
           <img src="https://source.unsplash.com/random/800x600?exhibition" alt="Exhibition">
           <p>展示我们与社区合作策划的互动展览项目。</p>
         </div>
       </div>
     </section>
+
     <section id="publications">
-      <h2 onclick="toggleAccordion(this)">研究 / Research</h2>
-      <div class="accordion-content">
+  <h2 onclick="toggleAccordion(this)">研究 / Research</h2>
+  <div class="accordion-content" style="text-align: center;">
+    <div class="item-block">
+  <h3 style="font-style: italic;">体育都市主义</h3>
+  <img src="https://source.unsplash.com/random/800x600?sport" alt="Sport Urbanism">
+  <p>【体育都市主义】是2020年岳阳发起的研究计划，聚焦都市公共空间中发生的体育运动与游戏，以身体与城市公共环境关系的视角，探索公共空间的创意化设计与公共关系的优化。</p>
+</div>
+<div class="item-block">
+  <h3 style="font-style: italic;">意外重庆</h3>
+  <img src="https://source.unsplash.com/random/800x600?book" alt="Unexpected Chongqing">
+  <p>【意外重庆】是2014年徐腾、曾毅、岳阳发起的空间观察研究小组，持续对以重庆为主的城乡空间进行观察和记录，探寻人与其生活环境的独特形态与有趣关系。</p>
+    </div>
+    <div class="item-block">
+      <h3 style="font-style: italic;">城市四格</h3>
+      <img src="https://source.unsplash.com/random/800x600?city" alt="Urban Quad">
+      <p>【城市四格】栏目以四格图像形式观察城乡环境，记录公共空间中各种有趣的现象和行为。该栏目为共创栏目，来源有学生、设计师、公共空间爱好者。</p>
+    </div>
+  </div>
+</section>
+
+    <section id="collaboration">
+      <h2 onclick="toggleAccordion(this)">合作 / Collaboration</h2>
+      <div class="accordion-content" style="text-align: center;">
         <div class="item-block">
-          <h3 style="font-style:italic;">体育都市主义</h3>
-          <img src="https://source.unsplash.com/random/800x600?sport" alt="Sport Urbanism">
-          <p>【体育都市主义】是2020年岳阳发起的研究计划，聚焦都市公共空间中发生的体育运动与游戏，以身体与城市公共环境关系的视角，探索公共空间的创意化设计与公共关系的优化。</p>
-        </div>
-        <div class="item-block">
-          <h3 style="font-style:italic;">意外重庆</h3>
-          <img src="https://source.unsplash.com/random/800x600?book" alt="Unexpected Chongqing">
-          <p>【意外重庆】是2014年徐腾、曾毅、岳阳发起的空间观察研究小组，持续对以重庆为主的城乡空间进行观察和记录，探寻人与其生活环境的独特形态与有趣关系。</p>
-        </div>
-        <div class="item-block">
-          <h3 style="font-style:italic;">城市四格 Urban4</h3>
-          <img src="https://source.unsplash.com/random/800x600?city" alt="Urban4">
-          <p>【城市四格】栏目以四格图像形式观察城乡环境，记录公共空间中各种有趣的现象和行为。该栏目为共创栏目，来源有学生、设计师、公共空间爱好者。</p>
+          <img src="https://source.unsplash.com/random/800x600?team" alt="Collaboration">
+          <p>我们欢迎与不同机构共同开展项目、研究与展览。</p>
         </div>
       </div>
     </section>
-    <section id="collaboration">
-      <h2 onclick="toggleAccordion(this)">合作 / Collaboration</h2>
-      <div class="accordion-content">
-        <div class="item-block">
-          <img src="https://source.unsplash.com/random/800x600?team" alt="Collaboration">
-          <p>我们欢迎与不同机构共同开展项目、研
+
+    <section id="about">
+  <h2 onclick="toggleAccordion(this)">关于 / About</h2>
+  <div class="accordion-content" style="text-align: center;">
+    <div class="item-block">
+      <img src="https://source.unsplash.com/random/800x600?studio" alt="About">
+      <p>空间气质指南致力于挖掘城乡空间气质，进行就地设计与公共艺术创作、研究。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+  <h2 onclick="toggleAccordion(this)">联系 / Contact</h2>
+  <div class="accordion-content" style="text-align: center;">
+    <div class="item-block">
+      <img src="https://source.unsplash.com/random/800x600?map" alt="Contact">
+      <p>邮箱 / Email: 810040332@qq.com<br>地址 / Address: 银河系访问学者驻重庆办公室</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+function toggleAccordion(header) {
+  const allContents = document.querySelectorAll('.accordion-content');
+  const content = header.nextElementSibling;
+  const isOpen = content.classList.contains('open');
+  allContents.forEach(c => c.classList.remove('open'));
+  if (!isOpen) {
+    content.classList.add('open');
+  }
+}
+
+// 点击导航链接时展开对应 section
+const navLinks = document.querySelectorAll('.sidebar a, .horizontal-nav a');
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    const targetId = link.getAttribute('href').replace('#', '');
+    const section = document.getElementById(targetId);
+    if (section) {
+      const h2 = section.querySelector('h2');
+      if (h2 && h2.nextElementSibling) {
+        const allContents = document.querySelectorAll('.accordion-content');
+        allContents.forEach(c => c.classList.remove('open'));
+        h2.nextElementSibling.classList.add('open');
+      }
+    }
+  });
+});
+setTimeout(() => {
+  const intro = document.getElementById('intro');
+  intro.style.opacity = '0';
+  setTimeout(() => {
+    intro.style.display = 'none';
+  }, 1000);
+}, 3000);
+</script>
+  
+</body>
+</html>
