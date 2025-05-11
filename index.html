@@ -241,19 +241,9 @@ p {
   <div class="project-tile" onclick="showProject('project4')">
     <img src="https://source.unsplash.com/random/400x400?architecture4" alt="project4" style="width:100%; height:auto;">
   </div>
+
 </div>
-  <div class="project-tile" onclick="showProject(this, 'project2')">
-    <img src="https://source.unsplash.com/random/400x400?architecture2" alt="project2" style="width:100%; height:auto;">
-  </div>
-  <div class="project-tile" onclick="showProject(this, 'project3')">
-    <img src="https://source.unsplash.com/random/400x400?architecture3" alt="project3" style="width:100%; height:auto;">
-  </div>
-  <div class="project-tile" onclick="showProject(this, 'project4')">
-    <img src="https://source.unsplash.com/random/400x400?architecture4" alt="project4" style="width:100%; height:auto;">
-  </div>
-</div>
-<div class="project-detail-close" onclick="closeProject()" style="position:absolute; top:10px; right:20px; font-size:24px; cursor:pointer; color:#666; z-index:1000;">×</div>
-$1
+
   <div style="display:flex; overflow-x:auto; gap:10px;">
     <img src="https://source.unsplash.com/random/800x600?arch-detail1" style="height:300px;">
     <img src="https://source.unsplash.com/random/800x600?arch-detail2" style="height:300px;">
@@ -371,6 +361,7 @@ function showProject(id) {
   document.querySelectorAll('.project-detail').forEach(detail => detail.style.display = 'none');
   document.getElementById(id).style.display = 'block';
   window.scrollTo({ top: document.getElementById(id).offsetTop - 60, behavior: 'smooth' });
+}
 });
 }
 function closeProject() {
