@@ -289,4 +289,39 @@ function toggleAccordion(header) {
   const allContents = document.querySelectorAll('.accordion-content');
   const content = header.nextElementSibling;
   const isOpen = content.classList.contains('open');
-  allContents.forEach(c =>
+  allContents.forEach(c => c.classList.remove('open'));
+  if (!isOpen) {
+    content.classList.add('open');
+  }
+}
+
+function toggleMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  if (window.innerWidth <= 768) {
+    nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+  }
+}
+
+const navLinks = document.querySelectorAll('.sidebar a, .horizontal-nav a, .mobile-nav a');
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').replace('#', '');
+    const section = document.getElementById(targetId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      const h2 = section.querySelector('h2');
+      const allContents = document.querySelectorAll('.accordion-content');
+      allContents.forEach(c => c.classList.remove('open'));
+      if (h2 && h2.nextElementSibling) {
+        h2.nextElementSibling.classList.add('open');
+      }
+    }
+    if (window.innerWidth <= 768) {
+      document.getElementById('mobileNav').style.display = 'none';
+    }
+  });
+});
+  </script>
+</body>
+</html>
