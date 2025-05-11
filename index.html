@@ -228,10 +228,20 @@ p {
 
     <section id="projects">
       <h2 onclick="toggleAccordion(this)">作品 / Projects</h2>
-      <div class="accordion-content section-inner" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 20px;">
-  <div class="project-tile" onclick="showProject(this, 'project1')">
+      <div class="accordion-content section-inner open" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 20px;">
+  <div class="project-tile" onclick="showProject('project1')">
     <img src="https://source.unsplash.com/random/400x400?architecture1" alt="project1" style="width:100%; height:auto;">
   </div>
+  <div class="project-tile" onclick="showProject('project2')">
+    <img src="https://source.unsplash.com/random/400x400?architecture2" alt="project2" style="width:100%; height:auto;">
+  </div>
+  <div class="project-tile" onclick="showProject('project3')">
+    <img src="https://source.unsplash.com/random/400x400?architecture3" alt="project3" style="width:100%; height:auto;">
+  </div>
+  <div class="project-tile" onclick="showProject('project4')">
+    <img src="https://source.unsplash.com/random/400x400?architecture4" alt="project4" style="width:100%; height:auto;">
+  </div>
+</div>
   <div class="project-tile" onclick="showProject(this, 'project2')">
     <img src="https://source.unsplash.com/random/400x400?architecture2" alt="project2" style="width:100%; height:auto;">
   </div>
@@ -242,7 +252,8 @@ p {
     <img src="https://source.unsplash.com/random/400x400?architecture4" alt="project4" style="width:100%; height:auto;">
   </div>
 </div>
-<div id="project1" class="project-detail" style="display:none;">
+<div class="project-detail-close" onclick="closeProject()" style="position:absolute; top:10px; right:20px; font-size:24px; cursor:pointer; color:#666; z-index:1000;">×</div>
+$1
   <div style="display:flex; overflow-x:auto; gap:10px;">
     <img src="https://source.unsplash.com/random/800x600?arch-detail1" style="height:300px;">
     <img src="https://source.unsplash.com/random/800x600?arch-detail2" style="height:300px;">
@@ -355,9 +366,17 @@ navLinks.forEach(link => {
     }
   });
 });
-function showProject(tile, id) {
+function showProject(id) {
+  document.querySelectorAll('.accordion-content').forEach(el => el.classList.remove('open'));
   document.querySelectorAll('.project-detail').forEach(detail => detail.style.display = 'none');
   document.getElementById(id).style.display = 'block';
+  window.scrollTo({ top: document.getElementById(id).offsetTop - 60, behavior: 'smooth' });
+});
+}
+function closeProject() {
+  document.querySelectorAll('.project-detail').forEach(detail => detail.style.display = 'none');
+  document.querySelector('.accordion-content').classList.add('open');
+  window.scrollTo({ top: document.querySelector('.accordion-content').offsetTop - 60, behavior: 'smooth' });
 }
 </script>
   
