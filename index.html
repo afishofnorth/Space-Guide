@@ -228,11 +228,48 @@ p {
 
     <section id="projects">
       <h2 onclick="toggleAccordion(this)">作品 / Projects</h2>
-      <div class="accordion-content section-inner" style="text-align: center;">
-        <div class="item-block">
-          <img loading="lazy" src="https://source.unsplash.com/random/800x600?architecture" alt="Project">
-          <p>这是一个关于城市空间的作品示例，结合在地性与材料表达。</p>
-        </div>
+      <div class="accordion-content section-inner" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 20px;">
+  <div class="project-tile" onclick="showProject(this, 'project1')">
+    <img src="https://source.unsplash.com/random/400x400?architecture1" alt="project1" style="width:100%; height:auto;">
+  </div>
+  <div class="project-tile" onclick="showProject(this, 'project2')">
+    <img src="https://source.unsplash.com/random/400x400?architecture2" alt="project2" style="width:100%; height:auto;">
+  </div>
+  <div class="project-tile" onclick="showProject(this, 'project3')">
+    <img src="https://source.unsplash.com/random/400x400?architecture3" alt="project3" style="width:100%; height:auto;">
+  </div>
+  <div class="project-tile" onclick="showProject(this, 'project4')">
+    <img src="https://source.unsplash.com/random/400x400?architecture4" alt="project4" style="width:100%; height:auto;">
+  </div>
+</div>
+<div id="project1" class="project-detail" style="display:none;">
+  <div style="display:flex; overflow-x:auto; gap:10px;">
+    <img src="https://source.unsplash.com/random/800x600?arch-detail1" style="height:300px;">
+    <img src="https://source.unsplash.com/random/800x600?arch-detail2" style="height:300px;">
+  </div>
+  <p style="padding: 20px;">项目一说明文字，关于场地、构造与设计策略。</p>
+</div>
+<div id="project2" class="project-detail" style="display:none;">
+  <div style="display:flex; overflow-x:auto; gap:10px;">
+    <img src="https://source.unsplash.com/random/800x600?arch-detail3" style="height:300px;">
+    <img src="https://source.unsplash.com/random/800x600?arch-detail4" style="height:300px;">
+  </div>
+  <p style="padding: 20px;">项目二说明文字，材料研究与社区参与过程。</p>
+</div>
+<div id="project3" class="project-detail" style="display:none;">
+  <div style="display:flex; overflow-x:auto; gap:10px;">
+    <img src="https://source.unsplash.com/random/800x600?arch-detail5" style="height:300px;">
+    <img src="https://source.unsplash.com/random/800x600?arch-detail6" style="height:300px;">
+  </div>
+  <p style="padding: 20px;">项目三说明文字，空间组织与光影控制。</p>
+</div>
+<div id="project4" class="project-detail" style="display:none;">
+  <div style="display:flex; overflow-x:auto; gap:10px;">
+    <img src="https://source.unsplash.com/random/800x600?arch-detail7" style="height:300px;">
+    <img src="https://source.unsplash.com/random/800x600?arch-detail8" style="height:300px;">
+  </div>
+  <p style="padding: 20px;">项目四说明文字，文化语境与场地关系。</p>
+</div>
       </div>
     </section>
 
@@ -318,6 +355,10 @@ navLinks.forEach(link => {
     }
   });
 });
+function showProject(tile, id) {
+  document.querySelectorAll('.project-detail').forEach(detail => detail.style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+}
 </script>
   
 </body>
