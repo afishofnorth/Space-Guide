@@ -126,7 +126,6 @@ p {
   }
   .main-content {
     margin-left: 0;
-    padding: 0 20px;
   }
   section, .accordion-content, .item-block {
     text-align: center;
@@ -138,6 +137,17 @@ p {
     width: 100%;
     text-align: center;
   }
+  .main-content {
+    margin-left: 0;
+  }
+}
+  
+  
+  @media (max-width: 768px) {
+  .main-content {
+    margin-left: 0 !important;
+    padding: 0 20px;
+  }
   header {
     padding: 20px;
   }
@@ -147,26 +157,40 @@ p {
   .header-en {
     font-size: 22px;
   }
-  .header-wrap {
-    flex-direction: column;
-    gap: 4px;
+    .header-cn {
+      font-size: 30px;
+    }
+    .header-en {
+      font-size: 22px;
+    }
   }
-}
-.header-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-.header-cn {
-  font-size: 32px;
-  font-weight: bold;
-}
-.header-en {
-  font-size: 20px;
-  font-weight: normal;
-}
-  </style>
+  .header-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  .header-cn {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .header-en {
+    font-size: 20px;
+    font-weight: normal;
+  }
+  @media (max-width: 768px) {
+    .header-wrap {
+      flex-direction: column;
+      gap: 4px;
+    }
+    .header-cn {
+      font-size: 30px;
+    }
+    .header-en {
+      font-size: 22px;
+    }
+  }
+</style>
 </head>
 <body>
   <div id="intro" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #000; display: flex; align-items: center; justify-content: center; z-index: 10000; transition: opacity 1s ease; opacity: 1;">
@@ -175,14 +199,274 @@ p {
       空间气质指南<br><span style="font-size: 0.5em; font-weight: normal;">Space-Guide</span>
     </div>
   </div>
+  </div>
+  <div class="sidebar" id="sidebarNav">
+  <a href="#projects">
+    <span class="nav-cn">
+      <span style="writing-mode: vertical-rl; text-align: center; display: inline-block; word-break: break-word; line-height: 1.2;">
+  作品<br><span style="font-size: 12px;">Projects</span>
+</span>
+    </span>
+  </a>
+  <a href="#exhibitions">
+    <span class="nav-cn">
+      <span style="writing-mode: vertical-rl; text-align: center; display: inline-block; word-break: break-all;">展览<br>Exhibitions</span>
+    </span>
+  </a>
+  <a href="#publications">
+  <span class="nav-cn">
+    <span style="writing-mode: vertical-rl; text-align: center; display: inline-block; word-break: break-word; line-height: 1.2;">
+      研究<br><span style="font-size: 12px;">Research</span>
+    </span>
+  </span>
+</a>
+  <a href="#collaboration">
+    <span class="nav-cn">
+      <span style="writing-mode: vertical-rl; text-align: center; display: inline-block; word-break: break-all;">合作<br>Collaboration</span>
+    </span>
+  </a>
+  <a href="#about">
+    <span class="nav-cn">
+      <span style="writing-mode: vertical-rl; text-align: center; display: inline-block;">关于<br>About</span>
+    </span>
+  </a>
+  <a href="#contact">
+    <span class="nav-cn">
+      <span style="writing-mode: vertical-rl; text-align: center; display: inline-block;">联系<br>Contact</span>
+    </span>
+  </a>
+</div>
+  <div class="main-content">
+    <header onclick="toggleMobileNav()">
+  <div class="header-wrap">
+  <span class="header-cn" style="font-weight: normal; font-size: 28px;">空间气质指南</span>
+  <span class="header-en" style="font-weight: normal; font-size: 28px;">Space-Guide</span>
+</div>
+</header>
+    <nav class="horizontal-nav" id="horizontalNav">
+  <a href="#projects">作品 / Projects</a>
+  <a href="#exhibitions">展览 / Exhibitions</a>
+  <a href="#publications">研究 / Research</a>
+  <a href="#collaboration">合作 / Collaboration</a>
+  <a href="#about">关于 / About</a>
+  <a href="#contact">联系 / Contact</a>
+</nav>
+
+    <section id="projects">
+  <h2 onclick="toggleAccordion(this)">作品 / Projects</h2>
+  <div class="accordion-content" style="text-align: center;">
+    <div class="item-block">
+      <h3 style="font-style: italic;">作品1-1</h3>
+      <div class="gallery" style="position: relative; width: 100%; overflow: hidden;">
+  <div class="slider" style="display: flex; transition: transform 0.3s ease;">
+    <img src="作品1-0.jpg" alt="作品1-1 图1" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="作品1-1.jpg" alt="作品1-1 图2" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="作品1-2.jpg" alt="作品1-1 图3" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="作品1-3.jpg" alt="作品1-1 图4" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="作品1-4.jpg" alt="作品1-1 图5" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="作品1-5.jpg" alt="作品1-1 图6" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="作品1-6.jpg" alt="作品1-1 图7" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="作品1-7.jpg" alt="作品1-1 图8" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="作品1-8.jpg" alt="作品1-1 图9" style="flex-shrink: 0; height: auto; object-fit: contain;">
+  </div>
+  <button class="prev" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">←</button>
+  <button class="next" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">→</button>
+</div>
+<script>
+(function() {
+  const gallery = document.querySelector('.gallery');
+  const slider = gallery.querySelector('.slider');
+  const images = slider.querySelectorAll('img');
+  const prevBtn = gallery.querySelector('.prev');
+  const nextBtn = gallery.querySelector('.next');
+  let index = 0;
+  const scrollToIndex = i => {
+    index = Math.max(0, Math.min(i, images.length - 1));
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  };
+  prevBtn.addEventListener('click', () => scrollToIndex(index - 1));
+  nextBtn.addEventListener('click', () => scrollToIndex(index + 1));
+})();
+</script>
+      <p>这是作品1-1的简要说明，描述其在地性、材料或空间创意。</p>
+    </div>
+    <div class="item-block">
+  <h3 style="font-style: italic;">作品2-1</h3>
+  <div class="gallery" style="position: relative; width: 100%; overflow: hidden;">
+    <div class="slider" style="display: flex; transition: transform 0.3s ease;">
+      <img src="作品2-0.jpg" alt="作品2-1 图1" style="flex-shrink: 0; height: auto; object-fit: contain;">
+      <img src="作品2-1.jpg" alt="作品2-1 图2" style="flex-shrink: 0; height: auto; object-fit: contain;">
+      <img src="作品2-2.jpg" alt="作品2-1 图3" style="flex-shrink: 0; height: auto; object-fit: contain;">
+      <img src="作品2-3.jpg" alt="作品2-1 图4" style="flex-shrink: 0; height: auto; object-fit: contain;">
+      <img src="作品2-4.jpg" alt="作品2-1 图5" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    </div>
+    <button class="prev" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">←</button>
+    <button class="next" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">→</button>
+  </div>
+  <p>这是作品2-1的简要说明，强调与场地之间的对话关系。</p>
+</div>
+<script>
+(function() {
+  const gallery = document.querySelectorAll('.gallery')[1];
+  const slider = gallery.querySelector('.slider');
+  const images = slider.querySelectorAll('img');
+  const prevBtn = gallery.querySelector('.prev');
+  const nextBtn = gallery.querySelector('.next');
+  let index = 0;
+  const scrollToIndex = i => {
+    index = Math.max(0, Math.min(i, images.length - 1));
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  };
+  prevBtn.addEventListener('click', () => scrollToIndex(index - 1));
+  nextBtn.addEventListener('click', () => scrollToIndex(index + 1));
+})();
+</script>
+      <p>这是作品2-1的简要说明，强调与场地之间的对话关系。</p>
+    </div>
+    <div class="item-block">
+      <h3 style="font-style: italic;">作品3-1</h3>
+      <div class="gallery" style="position: relative; width: 100%; overflow: hidden;">
+  <div class="slider" style="display: flex; transition: transform 0.3s ease;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder1" alt="图1" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder2" alt="图2" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder3" alt="图3" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder4" alt="图4" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder5" alt="图5" style="flex-shrink: 0; height: auto; object-fit: contain;">
+  </div>
+  <button class="prev" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">←</button>
+  <button class="next" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">→</button>
+</div>
+      <p>这是作品3-1的简要说明，聚焦社区营造或材料逻辑。</p>
+    </div>
+    <div class="item-block">
+      <h3 style="font-style: italic;">作品4-1</h3>
+      <div class="gallery" style="position: relative; width: 100%; overflow: hidden;">
+  <div class="slider" style="display: flex; transition: transform 0.3s ease;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder1" alt="图1" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder2" alt="图2" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder3" alt="图3" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder4" alt="图4" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder5" alt="图5" style="flex-shrink: 0; height: auto; object-fit: contain;">
+  </div>
+  <button class="prev" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">←</button>
+  <button class="next" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">→</button>
+</div>
+      <p>这是作品4-1的简要说明，强调公共性与时空感受。</p>
+    </div>
+    <div class="item-block">
+      <h3 style="font-style: italic;">作品5-1</h3>
+      <div class="gallery" style="position: relative; width: 100%; overflow: hidden;">
+  <div class="slider" style="display: flex; transition: transform 0.3s ease;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder1" alt="图1" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder2" alt="图2" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder3" alt="图3" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder4" alt="图4" style="flex-shrink: 0; height: auto; object-fit: contain;">
+    <img src="https://source.unsplash.com/random/800x600?placeholder5" alt="图5" style="flex-shrink: 0; height: auto; object-fit: contain;">
+  </div>
+  <button class="prev" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">←</button>
+  <button class="next" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">→</button>
+</div>
+      <p>这是作品5-1的简要说明，结合日常生活与空间再定义。</p>
+    </div>
+  </div>
+</section>
+
+    <section id="exhibitions">
+      <h2 onclick="toggleAccordion(this)">展览 / Exhibitions</h2>
+      <div class="accordion-content" style="text-align: center;">
+        <div class="item-block">
+          <img src="https://source.unsplash.com/random/800x600?exhibition" alt="Exhibition">
+          <p>展示我们与社区合作策划的互动展览项目。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+  <h2 onclick="toggleAccordion(this)">研究 / Research</h2>
+  <div class="accordion-content" style="text-align: center;">
+    <div class="item-block">
+  <h3 style="font-style: italic;">体育都市主义</h3>
+  <img src="https://source.unsplash.com/random/800x600?sport" alt="Sport Urbanism">
+  <p>【体育都市主义】是2020年岳阳发起的研究计划，聚焦都市公共空间中发生的体育运动与游戏，以身体与城市公共环境关系的视角，探索公共空间的创意化设计与公共关系的优化。</p>
+</div>
+<div class="item-block">
+  <h3 style="font-style: italic;">意外重庆</h3>
+  <img src="https://source.unsplash.com/random/800x600?book" alt="Unexpected Chongqing">
+  <p>【意外重庆】是2014年徐腾、曾毅、岳阳发起的空间观察研究小组，持续对以重庆为主的城乡空间进行观察和记录，探寻人与其生活环境的独特形态与有趣关系。</p>
+    </div>
+    <div class="item-block">
+      <h3 style="font-style: italic;">城市四格 Urban4</h3>
+      <img src="https://source.unsplash.com/random/800x600?city" alt="Urban4">
+      <p>【城市四格】栏目以四格图像形式观察城乡环境，记录公共空间中各种有趣的现象和行为。该栏目为共创栏目，来源有学生、设计师、公共空间爱好者。</p>
+    </div>
+  </div>
+</section>
+
+    <section id="collaboration">
+      <h2 onclick="toggleAccordion(this)">合作 / Collaboration</h2>
+      <div class="accordion-content" style="text-align: center;">
+        <div class="item-block">
+          <img src="https://source.unsplash.com/random/800x600?team" alt="Collaboration">
+          <p>我们欢迎与不同机构共同开展项目、研究与展览。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+  <h2 onclick="toggleAccordion(this)">关于 / About</h2>
+  <div class="accordion-content" style="text-align: center;">
+    <div class="item-block">
+      <img src="https://source.unsplash.com/random/800x600?studio" alt="About">
+      <p>空间气质指南致力于挖掘城乡空间气质，进行就地设计与公共艺术创作、研究。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+  <h2 onclick="toggleAccordion(this)">联系 / Contact</h2>
+  <div class="accordion-content" style="text-align: center;">
+    <div class="item-block">
+      <img src="https://source.unsplash.com/random/800x600?map" alt="Contact">
+      <p>邮箱 / Email: 810040332@qq.com<br>地址 / Address: 银河系访问学者驻重庆办公室</p>
+        </div>
+      </div>
+    </section>
+  </div>
   <script>
-    setTimeout(() => {
-      const intro = document.getElementById('intro');
-      intro.style.opacity = '0';
-      setTimeout(() => {
-        intro.style.display = 'none';
-      }, 1000);
-    }, 3000);
-  </script>
+function toggleAccordion(header) {
+  const allContents = document.querySelectorAll('.accordion-content');
+  const content = header.nextElementSibling;
+  const isOpen = content.classList.contains('open');
+  allContents.forEach(c => c.classList.remove('open'));
+  if (!isOpen) {
+    content.classList.add('open');
+  }
+}
+
+// 点击导航链接时展开对应 section
+const navLinks = document.querySelectorAll('.sidebar a, .horizontal-nav a');
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    const targetId = link.getAttribute('href').replace('#', '');
+    const section = document.getElementById(targetId);
+    if (section) {
+      const h2 = section.querySelector('h2');
+      if (h2 && h2.nextElementSibling) {
+        const allContents = document.querySelectorAll('.accordion-content');
+        allContents.forEach(c => c.classList.remove('open'));
+        h2.nextElementSibling.classList.add('open');
+      }
+    }
+  });
+});
+setTimeout(() => {
+  const intro = document.getElementById('intro');
+  intro.style.opacity = '0';
+  setTimeout(() => {
+    intro.style.display = 'none';
+  }, 1000);
+}, 3000);
+</script>
+  
 </body>
 </html>
