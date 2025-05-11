@@ -15,10 +15,9 @@ body {
   background-color: #fff;
   color: #111;
   display: flex;
-  flex-direction: column;
 }
 .sidebar {
-  width: 140px;
+  width: 100px;
   position: fixed;
   top: 0;
   left: 0;
@@ -54,7 +53,7 @@ body {
   width: 100%;
 }
 .main-content {
-  margin-left: 140px;
+  margin-left: 100px;
   flex: 1;
 }
 header {
@@ -116,8 +115,6 @@ p {
   height: auto;
   margin-top: 10px;
 }
-
-/* 手机端样式 */
 @media (max-width: 768px) {
   .horizontal-nav,
   .sidebar {
@@ -126,102 +123,90 @@ p {
   .main-content {
     margin-left: 0;
   }
-  .mobile-nav {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 0;
-    background-color: #fff;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-  }
-  .mobile-nav a {
-    text-decoration: none;
-    color: #111;
-    font-size: 16px;
-    padding: 6px 0;
-    font-weight: bold;
-    border-bottom: 1px solid #ddd;
-    width: 100%;
-    text-align: center;
-  }
 }
-
-.header-cn {
-  font-size: 32px;
-  font-weight: bold;
-}
-.header-en {
-  font-size: 20px;
-  font-weight: normal;
-}
-.header-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-@media (max-width: 768px) {
-  .header-wrap {
-    flex-direction: column;
-    gap: 4px;
-  }
   .header-cn {
-    font-size: 30px;
+    font-size: 28px;
+    font-weight: bold;
   }
   .header-en {
-    font-size: 22px;
+    font-size: 20px;
+    font-weight: normal;
   }
-}
-  </style>
+  @media (max-width: 768px) {
+    header {
+      padding: 20px;
+    }
+    .header-cn {
+      font-size: 30px;
+    }
+    .header-en {
+      font-size: 22px;
+    }
+  }
+  .header-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  .header-cn {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .header-en {
+    font-size: 20px;
+    font-weight: normal;
+  }
+  @media (max-width: 768px) {
+    .header-wrap {
+      flex-direction: column;
+      gap: 4px;
+    }
+    .header-cn {
+      font-size: 30px;
+    }
+    .header-en {
+      font-size: 22px;
+    }
+  }
+</style>
 </head>
 <body>
-  <!-- 侧边栏导航 -->
   <div class="sidebar" id="sidebarNav">
-    <a href="#projects"><span class="nav-cn">作品 Projects</span></a>
-    <a href="#exhibitions"><span class="nav-cn">展览 Exhibitions</span></a>
-    <a href="#publications"><span class="nav-cn">研究 Research</span></a>
-    <a href="#collaboration"><span class="nav-cn">合作 Collaboration</span></a>
-    <a href="#about"><span class="nav-cn">关于 About</span></a>
-    <a href="#contact"><span class="nav-cn">联系 Contact</span></a>
+    <a href="#projects">
+      <span class="nav-cn">作品 Projects</span></a>
+    <a href="#exhibitions">
+      <span class="nav-cn">展览 Exhibitions</span></a>
+    <a href="#publications">
+      <span class="nav-cn">研究 Research</span></a>
+    <a href="#collaboration">
+      <span class="nav-cn">合作 Collaboration</span></a>
+    <a href="#about">
+      <span class="nav-cn">关于 About</span></a>
+    <a href="#contact">
+      <span class="nav-cn">联系 Contact</span></a>
   </div>
-
-  <!-- 主体内容 -->
   <div class="main-content">
     <header onclick="toggleMobileNav()">
-      <div class="header-wrap">
-        <span class="header-cn">空间指南</span>
-        <span class="header-en">Space-Guide</span>
-      </div>
-    </header>
-
-    <!-- 横向导航 -->
+  <div class="header-wrap">
+    <span class="header-cn">空间指南</span>
+    <span class="header-en">Space-Guide</span>
+  </div>
+</header>
     <nav class="horizontal-nav" id="horizontalNav">
-      <a href="#projects">作品 / Projects</a>
-      <a href="#exhibitions">展览 / Exhibitions</a>
-      <a href="#publications">研究 / Research</a>
-      <a href="#collaboration">合作 / Collaboration</a>
-      <a href="#about">关于 / About</a>
-      <a href="#contact">联系 / Contact</a>
-    </nav>
+  <a href="#projects">作品 / Projects</a>
+  <a href="#exhibitions">展览 / Exhibitions</a>
+  <a href="#publications">研究 / Research</a>
+  <a href="#collaboration">合作 / Collaboration</a>
+  <a href="#about">关于 / About</a>
+  <a href="#contact">联系 / Contact</a>
+</nav>
 
-    <!-- 手机端竖向导航 -->
-    <div id="mobileNav" class="mobile-nav">
-      <a href="#projects">作品 / Projects</a>
-      <a href="#exhibitions">展览 / Exhibitions</a>
-      <a href="#publications">研究 / Research</a>
-      <a href="#collaboration">合作 / Collaboration</a>
-      <a href="#about">关于 / About</a>
-      <a href="#contact">联系 / Contact</a>
-    </div>
-
-    <!-- 内容区块 -->
     <section id="projects">
       <h2 onclick="toggleAccordion(this)">作品 / Projects</h2>
-      <div class="accordion-content">
-        <div class="item-block" style="text-align: center;">
-          <img src="https://source.unsplash.com/random/800x600?architecture" alt="Project">
+      <div class="accordion-content section-inner" style="text-align: center;">
+        <div class="item-block">
+          <img loading="lazy" src="https://source.unsplash.com/random/800x600?architecture" alt="Project">
           <p>这是一个关于城市空间的作品示例，结合在地性与材料表达。</p>
         </div>
       </div>
@@ -229,8 +214,8 @@ p {
 
     <section id="exhibitions">
       <h2 onclick="toggleAccordion(this)">展览 / Exhibitions</h2>
-      <div class="accordion-content">
-        <div class="item-block" style="text-align: center;">
+      <div class="accordion-content" style="text-align: center;">
+        <div class="item-block">
           <img src="https://source.unsplash.com/random/800x600?exhibition" alt="Exhibition">
           <p>展示我们与社区合作策划的互动展览项目。</p>
         </div>
@@ -238,24 +223,24 @@ p {
     </section>
 
     <section id="publications">
-      <h2 onclick="toggleAccordion(this)">研究 / Research</h2>
-      <div class="accordion-content">
-        <div class="item-block" style="text-align: center;">
-          <img src="https://source.unsplash.com/random/800x600?book" alt="Research">
-          <p>本研究项目聚焦城市空间、公众参与与设计实践。</p>
-        </div>
-        <div class="item-block" style="text-align: center;">
-          <h3 style="font-style: italic;">城市四格</h3>
-          <img src="https://source.unsplash.com/random/800x600?city" alt="Urban Quad">
-          <p>该子栏目以四格图像形式观察城市日常，记录公共空间微观场景。</p>
-        </div>
-      </div>
-    </section>
+  <h2 onclick="toggleAccordion(this)">研究 / Research</h2>
+  <div class="accordion-content" style="text-align: center;">
+    <div class="item-block">
+      <img src="https://source.unsplash.com/random/800x600?book" alt="Publication">
+      <p>本研究项目聚焦城市空间、公众参与与设计实践。</p>
+    </div>
+    <div class="item-block">
+      <h3 style="font-style: italic;">城市四格</h3>
+      <img src="https://source.unsplash.com/random/800x600?city" alt="Urban Quad">
+      <p>该子栏目以四格图像形式观察城市日常，记录公共空间微观场景。</p>
+    </div>
+  </div>
+</section>
 
     <section id="collaboration">
       <h2 onclick="toggleAccordion(this)">合作 / Collaboration</h2>
-      <div class="accordion-content">
-        <div class="item-block" style="text-align: center;">
+      <div class="accordion-content" style="text-align: center;">
+        <div class="item-block">
           <img src="https://source.unsplash.com/random/800x600?team" alt="Collaboration">
           <p>我们欢迎与不同机构共同开展项目、研究与展览。</p>
         </div>
@@ -264,8 +249,8 @@ p {
 
     <section id="about">
       <h2 onclick="toggleAccordion(this)">关于 / About</h2>
-      <div class="accordion-content">
-        <div class="item-block" style="text-align: center;">
+      <div class="accordion-content" style="text-align: center;">
+        <div class="item-block">
           <img src="https://source.unsplash.com/random/800x600?studio" alt="About">
           <p>空间指南致力于在地性设计与公共艺术研究。</p>
         </div>
@@ -274,16 +259,14 @@ p {
 
     <section id="contact">
       <h2 onclick="toggleAccordion(this)">联系 / Contact</h2>
-      <div class="accordion-content">
-        <div class="item-block" style="text-align: center;">
+      <div class="accordion-content" style="text-align: center;">
+        <div class="item-block">
           <img src="https://source.unsplash.com/random/800x600?map" alt="Contact">
           <p>邮箱 / Email: contact@spaceguide.cn<br>地址 / Address: 重庆九龙坡</p>
         </div>
       </div>
     </section>
   </div>
-
-  <!-- 脚本部分 -->
   <script>
 function toggleAccordion(header) {
   const allContents = document.querySelectorAll('.accordion-content');
@@ -295,33 +278,23 @@ function toggleAccordion(header) {
   }
 }
 
-function toggleMobileNav() {
-  const nav = document.getElementById('mobileNav');
-  if (window.innerWidth <= 768) {
-    nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
-  }
-}
-
-const navLinks = document.querySelectorAll('.sidebar a, .horizontal-nav a, .mobile-nav a');
+// 点击导航链接时展开对应 section
+const navLinks = document.querySelectorAll('.sidebar a, .horizontal-nav a');
 navLinks.forEach(link => {
   link.addEventListener('click', e => {
-    e.preventDefault();
     const targetId = link.getAttribute('href').replace('#', '');
     const section = document.getElementById(targetId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
       const h2 = section.querySelector('h2');
-      const allContents = document.querySelectorAll('.accordion-content');
-      allContents.forEach(c => c.classList.remove('open'));
       if (h2 && h2.nextElementSibling) {
-        h2.nextElementSibling.classList.add('open');
-      }
-    }
-    if (window.innerWidth <= 768) {
-      document.getElementById('mobileNav').style.display = 'none';
+  const allContents = document.querySelectorAll('.accordion-content');
+  allContents.forEach(c => c.classList.remove('open'));
+  h2.nextElementSibling.classList.add('open');
+}
     }
   });
 });
-  </script>
+</script>
+  
 </body>
 </html>
