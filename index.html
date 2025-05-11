@@ -227,14 +227,14 @@ p {
 </nav>
 
     <section id="projects">
-  <h2 onclick="toggleAccordion(this)">作品 / Projects</h2>
-  <div class="accordion-content" style="text-align: center;">
-    <div class="item-block">
-      <img src="https://source.unsplash.com/random/800x600?architecture" alt="Project">
-      <p>这是一个关于城市空间的作品示例，结合在地性与材料表达。</p>
-    </div>
-  </div>
-</section>
+      <h2 onclick="toggleAccordion(this)">作品 / Projects</h2>
+      <div class="accordion-content section-inner" style="text-align: center;">
+        <div class="item-block">
+          <img loading="lazy" src="https://source.unsplash.com/random/800x600?architecture" alt="Project">
+          <p>这是一个关于城市空间的作品示例，结合在地性与材料表达。</p>
+        </div>
+      </div>
+    </section>
 
     <section id="exhibitions">
       <h2 onclick="toggleAccordion(this)">展览 / Exhibitions</h2>
@@ -318,8 +318,6 @@ navLinks.forEach(link => {
     }
   });
 });
-);
-}
 </script>
   
 </body>
