@@ -35,15 +35,17 @@ body {
   text-decoration: none;
   color: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 60px;
   transition: color 0.3s;
   text-align: center;
-  font-weight: bold;
+  font-weight: normal;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 13px;
 }
 .sidebar a:hover {
   color: var(--highlight-bg);
@@ -174,7 +176,7 @@ p {
 <body>
   <div class="sidebar" id="sidebarNav">
     <a href="#projects">
-      <span class="nav-cn">作品 Projects</span></a>
+      <span class="nav-cn"><span style="writing-mode: vertical-rl;">作品</span><br><span style="writing-mode: vertical-rl;">Projects</span></span></a>
     <a href="#exhibitions">
       <span class="nav-cn">展览 Exhibitions</span></a>
     <a href="#publications">
@@ -189,9 +191,9 @@ p {
   <div class="main-content">
     <header onclick="toggleMobileNav()">
   <div class="header-wrap">
-    <span class="header-cn">空间指南</span>
-    <span class="header-en">Space-Guide</span>
-  </div>
+  <span class="header-cn" style="font-weight: normal; font-size: 28px;">空间指南</span>
+  <span class="header-en" style="font-weight: normal; font-size: 28px;">Space-Guide</span>
+</div>
 </header>
     <nav class="horizontal-nav" id="horizontalNav">
   <a href="#projects">作品 / Projects</a>
