@@ -38,13 +38,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 60px;
+  min-height: 100px;
+  padding: 8px 0;
   transition: color 0.3s;
   text-align: center;
   font-weight: normal;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: initial;
   font-size: 13px;
 }
 .sidebar a:hover {
@@ -178,7 +179,9 @@ p {
   <div class="sidebar" id="sidebarNav">
   <a href="#projects">
     <span class="nav-cn">
-      <span style="writing-mode: vertical-rl; text-align: center; display: inline-block;">作品<br>Projects</span>
+      <span style="writing-mode: vertical-rl; text-align: center; display: inline-block; word-break: break-word; line-height: 1.2;">
+  作品<br><span style="font-size: 12px;">Projects</span>
+</span>
     </span>
   </a>
   <a href="#exhibitions">
